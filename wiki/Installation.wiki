@@ -68,6 +68,8 @@ When it asks you if you want to automate the installation answer yes.
 
 == The upload script and wrapper ==
 
+If you are not going to be executing the `upload` command from the `rtorrent` oncomplete event you do not need to copy the `uploadwrap` file.
+
 Download the bin directory part of the script from SVN:
 {{{
 svn checkout http://upload.googlecode.com/svn/trunk/bin uploadbin
@@ -95,8 +97,8 @@ rm -r uploadbin/
 
 If you do not have *root* or *sudo* permissions you can also move these files to your local `/bin` directory:
 {{{
-mv uploadbin/upload ~/bin
-mv uploadbin/uploadwrap ~/bin
+mv uploadbin/upload ~/bin/
+mv uploadbin/uploadwrap ~/bin/
 rm -r uploadbin/
 }}}
 
