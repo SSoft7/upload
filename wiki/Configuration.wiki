@@ -1,0 +1,77 @@
+#labels Featured,Phase-Implementation
+= Configuration =
+
+<wiki:toc />
+
+== Introduction ==
+
+Here you can find information on how to configure the upload script files. If you want to know more about the functionalities of the script you can look on the [/Overview overview] page.
+
+
+== The home (resource) files ==
+
+In the home directory you can find two different kinds of resource files, the .webui.rc file which holds information for the webui, and the .upload.rc type files which hold information about the sites you can/want to upload to.
+
+=== The .webui.rc file ===
+
+In the file itself there are already comments with an explanation what the setting is for, however I will explain them here as well:
+
+{{{
+# password to access the webui: required
+pass = abcdefg
+}}}
+
+{{{
+# path to downloads dir: required
+data = /home/someone/downloads/
+}}}
+
+{{{
+# default directory sorting type: latest / alphabetically
+datasort = latest
+}}}
+
+{{{
+# default directory sorting order: asc[ending] / desc[ending]
+dataorder = desc
+}}}
+
+{{{
+# theme to use: light, dark, custom
+theme = dark
+}}}
+
+{{{
+# show directory size on hover over release: 1 = yes, 0 = no
+sizes = 1
+}}}
+
+{{{
+# print the upload command rather than executing it: 1 = yes, 0 = no
+debug = 0
+}}}
+
+{{{
+# show only these sites in the dropdown: case-insensitive comma seperated list
+sites = AO, TV
+}}}
+
+{{{
+# sort sites alphabetically: 1 = yes, 0 = no
+sitesort = 1
+}}}
+
+{{{
+# sort categories alphabetically: 1 = yes, 0 = no
+catsort = 1
+}}}
+
+
+=== The .upload.rc file ===
+
+In the file itself there are already comments with an explanation what the setting is for, however I will explain them here as well:
+
+
+== The web files ==
+
+In the webui directory there is only one file you need to edit which is the settings.php file. You can however if you want to add more .css files, this can be easily done by copying either the light.css or dark.css file and replacing the values.
