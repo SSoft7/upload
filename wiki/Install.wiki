@@ -32,12 +32,14 @@ and finally move them to the /usr/local/bin/ directory (note: you need either _*
 {{{
 mv uploadbin/upload /usr/local/bin/
 mv uploadbin/uploadwrap /usr/local/bin/
+rm -r uploadbin/
 }}}
 
 if you do not have _*root*_ or _*sudo*_ you can also move these files to your local bin directory:
 {{{
 mv uploadbin/upload ~/bin/
 mv uploadbin/uploadwrap ~/bin/
+rm -r uploadbin/
 }}}
 
 
