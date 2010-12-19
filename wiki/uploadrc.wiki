@@ -24,7 +24,7 @@ The password you use to log in to the website
 {{{
 LOGINURL="http://www.torrentsite.tld/login.php"
 }}}
-The URL where the login form data should be posted to. For gazelle installations this is usually _login.php_ and for TBDev installations this is usually _takelogin.php_. You can look at the page source what is written in the action="" part of the <form> tag.
+The URL where the login form data should be posted to. For gazelle installations this is usually _login.php_ and for TBDev installations this is usually _takelogin.php_. You can look at the page source what is written in the action="" part of the `<form>` tag.
 
 {{{
 LOGINTXT="<title>Login"
@@ -34,12 +34,12 @@ A _unique_ piece of text from the login page which will be used to see if we are
 {{{
 LOGINUSR="username"
 }}}
-The form input name which is used to submit the username. You can look at the page source and look at the <input> tag which is used for the username. This is usually something like _username_ or _user_.
+The form input name which is used to submit the username. You can look at the page source and look at the `<input>` tag which is used for the username. This is usually something like _username_ or _user_.
 
 {{{
 LOGINPWD="password"
 }}}
-The form input name which is used to submit the password. You can look at the page source and look at the <input> tag which is used for the password. This is usually something like _password_ or _pass_.
+The form input name which is used to submit the password. You can look at the page source and look at the `<input>` tag which is used for the password. This is usually something like _password_ or _pass_.
 
 
 === search settings ===
@@ -95,17 +95,17 @@ This is your _personal_ announce URL used to upload the torrent.
 {{{
 UPLOADTOR="torrent"
 }}}
-The form input name which is used to submit the torrent. You can look at the page source and look at the <input> tag which is used for the torrent. This is usually something like _torrent_ (TBDev) or _file`_`input_ (Gazelle).
+The form input name which is used to submit the torrent. You can look at the page source and look at the `<input>` tag which is used for the torrent. This is usually something like _torrent_ (TBDev) or _file`_`input_ (Gazelle).
 
 {{{
 UPLOADNFO="nfo"
 }}}
-The form input name which is used to submit the nfo. You can look at the page source and look at the <input> tag which is used for the torrent. This is usually something like _nfo_ (TBDev) or _nfo`_`file`_`input_ (Gazelle).
+The form input name which is used to submit the nfo. You can look at the page source and look at the `<input>` tag which is used for the torrent. This is usually something like _nfo_ (TBDev) or _nfo`_`file`_`input_ (Gazelle).
 
 {{{
 UPLOADCAT="cat"
 }}}
-The form input name which is used to submit the category. You can look at the page source and look at the <select> tag which is used for the category. This is usually something like _category_ (TBDev) or _type_ (Gazelle).
+The form input name which is used to submit the category. You can look at the page source and look at the `<select>` tag which is used for the category. This is usually something like _category_ (TBDev) or _type_ (Gazelle).
 
 {{{
 UPLOADDESCR="descr"
@@ -178,7 +178,7 @@ ALLCATS=(
         "0day" "Ebook" "Misc"
 )
 }}}
-This array holds all the categories you are able to upload into on the site. Some characters like |, ) and ( should be escaped (add a backslash before the character). You should check check source of the upload page to see if the <option> tag value has a different value than the category name (this could be a number on some sites, mostly TBDev based). If the option value differs from the category name you should add this *after* the category name in the array.
+This array holds all the categories you are able to upload into on the site. Some characters like |, ) and ( should be escaped (add a backslash before the character). You should check check source of the upload page to see if the `<option>` tag value has a different value than the category name (this could be a number on some sites, mostly TBDev based). If the option value differs from the category name you should add this *after* the category name in the array.
 
 {{{
 KEYVAL=0
