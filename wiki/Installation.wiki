@@ -29,7 +29,7 @@ You can check if you have curl installed with the following command:
 {{{
 which curl
 }}}
-This should output something like /usr/bin/curl, if you do not get any output curl is most likely not installed. To install curl you can run the following command as _*root*_ or _*sudo*_:
+This should output something like /usr/bin/curl, if you do not get any output curl is most likely not installed. To install curl you can run the following command as _*root*_ or _*sudo*_ (for debian-based distro's):
 {{{
 apt-get install curl
 }}}
@@ -58,6 +58,7 @@ _rtorrent_fast_resume.pl_ can be downloaded from the [http://libtorrent.rakshasa
 cd ~/
 wget http://libtorrent.rakshasa.no/downloads/rtorrent_fast_resume.pl
 }}}
+
 
 
 == The upload script and wrapper ==
