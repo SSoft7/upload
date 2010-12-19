@@ -1,6 +1,8 @@
 #labels Featured,Phase-Implementation
 = Introduction =
 
+<wiki:toc />
+
 Here you can find information on how to install the chat plugin. If you want to know more about the functionalities of this plugin you can look on the [http://code.google.com/p/upload/wiki/Overview overview] page.
 
 
