@@ -38,7 +38,7 @@ $sites = array(
     )
 );
 }}}
-Here you have to enter which sites and their corresponding categories will be available to be shown in the dropdowns. The array of categories is slightly different from the one in the .upload.rc files. Here the categories should be separated by a comma and it should hold only category names (so if you have the IDs after the category in the .upload.rc file you should *not* have those here)
+Here you have to enter which sites and their corresponding categories will be available to be shown in the dropdowns. The dropdowns on the webui page will have the same order as this array unless the sitesort and/or catsort values are set to 1. The array of categories is slightly different from the one in the .upload.rc files. Here the categories should be separated by a comma and it should hold only category names (so if you have the IDs after the category in the .upload.rc file you should *not* have those here)
 
 {{{
 $default["theme"] = "light";
