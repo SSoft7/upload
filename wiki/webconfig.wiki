@@ -2,14 +2,12 @@
 
 == Introduction ==
 
-Here you can find information on how to configure the settings.php file for the webui. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
+Here you can find information on how to configure the *settings.php* file for the webui. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
 
 
 == The settings.php configuration ==
 
 {{{
-// list of users: user (string) => settings (array: setting (string) => value (mixed))
-// note: ending slash is required for setting uploader
 $users = array(
     "user"      => array(
         "uploader" => "/home/user/upload/"
@@ -19,11 +17,9 @@ $users = array(
     )
 );
 }}}
-here you have to set which users will have access to the webui. The only parts which need to be filled in are the (ssh) username and the path to their upload directory. The rest of the user's settings will be retrieved from the .webui.rc file.
+Here you have to set which users will have access to the webui. The only parts which need to be filled in are the (ssh) username and the path to their upload directory. The rest of the user's settings will be retrieved from the .webui.rc file.
 
 {{{
-// list of sites and categories: site name or abbreviation (string) => categories (array: category (string))
-// note: the dropdowns have the same order as entered here unless setting catsort is true
 $sites = array(
     "TV"  => array(
         "Appz/0DAY", "Appz/Mac", "Appz/PC-ISO",
@@ -42,41 +38,34 @@ $sites = array(
     )
 );
 }}}
-here you have to enter which sites and their corresponding categories will be available to be shown in the dropdowns.
+Here you have to enter which sites and their corresponding categories will be available to be shown in the dropdowns. The array of categories is slightly different from the one in the .upload.rc files. Here the categories should be separated by a comma and it should hold only category names (so if you have the IDs after the category in the .upload.rc file you should *not* have those here)
 
 {{{
-// default theme: light / dark / custom
-// note: this will load light.css / dark.css / custom.css
 $default["theme"] = "light";
 }}}
-here you can set the default theme/stylesheet that will be used if the user has not specified one in his .webui.rc file.
+Here you can set the default theme/stylesheet that will be used if the user has not specified one in his .webui.rc file. The possible options are light or dark, or if you added any custom stylesheet files you can use those as well. This should be the name of the .css file without the .css extension.
 
 {{{
-// default show directory size on hover: 1 = yes, 0 = no
 $default["sizes"] = 0;
 }}}
-here you can set the default value if sizes should be shown when hovering over the release (i.e. 1.37 GiB).
+Here you can set the default value if sizes should be shown when hovering over the release (i.e. 1.37 GiB). Set this to 1 to enable it by default or to 0 to disable it by default.
 
 {{{
-// default directory sorting type: latest / alphabetically (string)
 $default["datasort"] = "latest";
 }}}
-here you can set the default data sorting that will be used when the user hasn't specified one.
+Here you can set the default data sorting that will be used if the user hasn't specified one. Possible values are latest or alphabetically.
 
 {{{
-// default directory sorting order: asc[ending] / desc[ending] (string)
 $default["dataorder"] = "desc";
 }}}
-here you can set the default data order that will be used when the user hasn't specified one.
+Here you can set the default data order that will be used if the user hasn't specified one. Possible values are asc or desc.
 
 {{{
-// default sort sites alphabetically: 1 = yes, 0 = no
 $default["sitesort"] = 0;
 }}}
-here you can set if the sites will be sorted alphabetically if the user hasn't specified it.
+Here you can set if the sites will be sorted alphabetically if the user hasn't specified it. Set this to 1 to enable it by default or to 0 to disable it by default.
 
 {{{
-// default sort categories alphabetically: 1 = yes, 0 = no
 $default["catsort"] = 0;
 }}}
-here you can set if the categories will be sorted alphabetically if the user hasn't specified it.
+Here you can set if the categories will be sorted alphabetically if the user hasn't specified it. Set this to 1 to enable it by default or to 0 to disable it by default.
