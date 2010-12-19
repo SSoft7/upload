@@ -49,7 +49,7 @@ cd mktorrent-1.0/
 make USE_LARGE_FILES=1
 make install
 }}}
-The `make install` command should be executed as *root* or *sudo*, if you do not have this privilege you can also move the `mktorrent` file which has been created in the `mktorrent-1.0/` dir to your local `/bin` dir. More information about your local `/bin` dir can be found in the [Installation#The_upload_script_and_wrapper upload script and wrapper] part of this wiki page.
+The `make install` command should be executed as *root* or *sudo*, if you do not have this privilege you can also move the `mktorrent` file which has been created in the `mktorrent-1.0/` dir to your local `/bin` dir. More information about your local `/bin` dir can be found in [Installation#The_bin_directory upload the bin directory] part of this wiki page.
 
 === rtorrent_fast_resume.pl ===
 It is recommended that you use `rtorrent_fast_resume.pl` with this script, however this is *not required*, and if you do not have *root* or *sudo* you might not be able to use it. The reason it is recommended is because it will allow you to skip the initial hash check when the torrent gets added to `rtorrent`. As you are the person who created the torrent you can be certain that you have the files from the torrent 100% complete.
@@ -66,7 +66,7 @@ perl -MCPAN -e 'install Convert::Bencode'
 When it asks you if you want to automate the installation answer yes.
 
 
-== The upload script and wrapper ==
+== The bin directory ==
 
 If you are not going to be executing the `upload` command from the `rtorrent` oncomplete event you do not need to copy the `uploadwrap` file.
 
@@ -110,7 +110,7 @@ mkdir ~/bin
 This directory will be prepended to your `PATH` variable upon logging in so you might have to log out and log in in order to be able to run the `upload` script from the `PATH`. If you have any active screen sessions (in which you want to use the `upload` command) you will have to restart these as well. Alternatively you could execute the script as `/home/user/bin/upload` (replacing user with your username) rather than `upload`.
 
 
-== The home (resource) files ==
+== The home directory ==
 
 To get the files for your home directory move to your homedir:
 {{{
@@ -147,7 +147,7 @@ chmod 700 upload/wrapper
 You can now edit the resource files, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration configuration] page.
 
 
-== The web files ==
+== The WebUI ==
 
 To get the files for the web directory move to the web directory (note: you need either *root* or *sudo* to download files to your web directory):
 {{{
