@@ -74,7 +74,7 @@ DUPECMD="cut -d \" -f 2"
 }}}
 This is the command that will be executed to extract the download link from the complete line which has been obtained by searching for the `DUPETXT`.
 This might be too advanced for some users that are not familiar with linux so I suggest you ask someone that is more experienced with string extraction in linux command line to help you with this.
-Suggestions are to use the [http://unixhelp.ed.ac.uk/CGI/man-cgi?cut `cut`] *OR* [http://unixhelp.ed.ac.uk/CGI/man-cgi?sed `sed`] commands. In the previous example it uses `cut`, in the next example it uses `sed`:
+Suggestions are to use the [http://unixhelp.ed.ac.uk/CGI/man-cgi?cut cut] *or* [http://unixhelp.ed.ac.uk/CGI/man-cgi?sed sed] commands. In the previous example it uses `cut`, in the next example it uses `sed`:
 {{{
 DUPECMD="sed s/.*\(download.php.*torrent\).*/\1/"
 }}}
