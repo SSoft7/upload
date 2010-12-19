@@ -45,9 +45,16 @@ system.method.set_key = event.download.finished,upload_torrent,"execute=uploadwr
 This will call the `uploadwrap` file which in turn executes the `upload` script. It will do this without specifying a category to upload in so you need to set up filters in your `.upload.rc`.
 
 
-== The webui ==
+== The WebUI ==
 
-In order to be able to use the webui the web user needs to be able to execute the wrapper file in the users their home upload directory as that user. In order to do so you need to add an extra line in the `/etc/sudoers` file. To do so you need to run the following command as *root* or *sudo*:
+In order to be able to use the webui the web user needs to be able to execute the wrapper file in the users their home upload directory as that user. In order to do so you need to add an extra line in the `/etc/sudoers` file.
+
+In the webui directory there is only one file you need to edit which is the `settings.php` file. You can however if you want to add more .css files, this can be easily done by copying either the `light.css` or `dark.css` file and replacing the values.
+
+
+=== visudo ===
+
+To edit the `/etc/sudoers` file you need to run the following command as *root* or *sudo*:
 {{{
 visudo
 }}}
@@ -57,7 +64,8 @@ www-data ALL=(user1, user2) NOPASSWD: /home/user1/upload/wrapper, /home/user2/up
 }}}
 Of course you need to replace user1 and user2 with the user(s) you want to be able to use the webui upload command. If your web user has a different name than `www-data` (i.e. `http`) you need to replace this as well.
 
-In the webui directory there is only one file you need to edit which is the `settings.php` file. You can however if you want to add more .css files, this can be easily done by copying either the `light.css` or `dark.css` file and replacing the values.
+
+=== settings.php ===
 
 In the file itself there are already comments with an explanation what the setting is for, however on the following wiki page they are explained in more detail where possible:
 
