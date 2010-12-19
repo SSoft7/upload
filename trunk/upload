@@ -2,7 +2,7 @@
 
 ##############################################################
 ##                                                          ##
-##  ScarS' torrent upload script v0.9.0                     ##
+##  ScarS' torrent upload script v0.9.1                     ##
 ##                                                          ##
 ##  created by: ScarS                                       ##
 ##  created on: Sat Oct 31 2009                             ##
@@ -46,7 +46,7 @@
 ##############################################################
 
 # version number
-VERSION=0.9.0
+VERSION=0.9.1
 
 ###############################
 ##        SCRIPT START       ##
@@ -70,27 +70,31 @@ shopt -s nocaseglob
 SNAME=`basename "$0"`
 
 # set default resource file
-RESOURCE="$HOME/.$SNAME.rc"
+RESOURCE=".$SNAME.rc"
 
-# we need to check for resource file first because some settings are used to check options
+# check for resource file first because some settings are used to check options
 while getopts ":r:" opt; do
 	case "$opt" in
 	# option r: load resource file
 	r )
-		# if entered path does not contain a / prepend the current dir
-		if [[ ! $OPTARG =~ \/ ]]; then
-			RESOURCE=`pwd`/$OPTARG
-		else
-			RESOURCE=$OPTARG
-		fi;;
+		RESOURCE=$OPTARG;;
 	esac
 done
 
-# look for settings
+# if resource was not found in the current dir look in the uploader dir or home dir
 if [ ! -f "$RESOURCE" ]; then
-	echo -e "\nerror: \`$RESOURCE' does not exist. make sure you have a resource file."
-	exit 1
-elif [ ! -r "$RESOURCE" ]; then
+	if [ -f "$HOME/uploader/$RESOURCE" ]; then
+		RESOURCE="$HOME/upload/$RESOURCE"
+	elif [ -f "$HOME/$RESOURCE" ]; then
+		RESOURCE="$HOME/$RESOURCE"
+	else
+		echo -e "\nerror: \`$RESOURCE' does not exist. make sure you have a resource file."
+		exit 1
+	fi
+fi
+
+# check if resource file is readable
+if [ ! -r "$RESOURCE" ]; then
 	echo -e "\nerror: \`$RESOURCE' is not readable. make sure your resource file is readable."
 	exit 1
 fi
@@ -520,6 +524,32 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	if [ ! -n "$DUPECHECK" ]; then
 		echo -e "\bdupe found\n\nerror: torrent has already been uploaded."
 		echo "### error: torrent has already been uploaded" >> $LOGFILE
+
+		# check if the duped release needs to be downloaded
+		if [ $DUPEDL -eq 1 ]; then
+			# grab download link
+			DLPAGE=`grep "$DUPETXT" /tmp/dupecheck$TMP.tmp | $DUPECMD`
+			DLPAGE=${DLPAGE//&amp;/&}
+
+			# download torrent
+			echo -e "\ndownloading: $DUPEURL$DLPAGE"
+			wget -q --no-check-certificate -O "$NAME.torrent" --load-cookies cookies$TMP.tmp "$DUPEURL$DLPAGE"
+			echo "### downloaded: $DUPEURL$DLPAGE" >> $LOGFILE
+
+			# check if rtorrent_fast_resume.pl needs to be done
+			if [ -n "$RFR" ] && [[ ! $TEST =~ mkt ]]; then
+			    # run rtorrent_fast_resume on the torrent
+			    $RFR $DOWNLOADS < "$NAME.torrent" > "$TORRENTS$PREPEND$NAME.torrent"
+			    rm -f "$NAME.torrent"
+			# check if the mktorrent created torrent needs to be moved
+			elif [[ ! $TEST =~ mkt ]]; then
+			    mv "$NAME.torrent" "$TORRENTS$PREPEND$NAME.torrent"
+			else
+			    echo -e "\nmktorrent test completed\ntorrent saved: $TMPPATH$NAME.torrent"
+			    echo "### mktorrent test completed - torrent saved: $TMPPATH$NAME.torrent" >> $LOGFILE
+			fi
+		fi
+
 		echo "### auto upload stopped at: `date`" >> $LOGFILE
 		cat $LOGFILE >> $MAINLOG
 		rm -f login$TMP.tmp cookies$TMP.tmp dupecheck$TMP.tmp $LOGFILE
@@ -666,6 +696,32 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	if [ ! -n "$DUPECHECK" ]; then
 		echo -e "\bdupe found\n\nerror: torrent has already been uploaded - torrent removed."
 		echo "### error: torrent has already been uploaded - torrent removed" >> $LOGFILE
+
+		# check if the duped release needs to be downloaded
+		if [ $DUPEDL -eq 1 ]; then
+			# grab download link
+			DLPAGE=`grep "$DUPETXT" /tmp/dupecheck$TMP.tmp | $DUPECMD`
+			DLPAGE=${DLPAGE//&amp;/&}
+
+			# download torrent
+			echo -e "\ndownloading: $DUPEURL$DLPAGE"
+			wget -q --no-check-certificate -O "$NAME.torrent" --load-cookies cookies$TMP.tmp "$DUPEURL$DLPAGE"
+			echo "### downloaded: $DUPEURL$DLPAGE" >> $LOGFILE
+
+			# check if rtorrent_fast_resume.pl needs to be done
+			if [ -n "$RFR" ] && [[ ! $TEST =~ mkt ]]; then
+			    # run rtorrent_fast_resume on the torrent
+			    $RFR $DOWNLOADS < "$NAME.torrent" > "$TORRENTS$PREPEND$NAME.torrent"
+			    rm -f "$NAME.torrent"
+			# check if the mktorrent created torrent needs to be moved
+			elif [[ ! $TEST =~ mkt ]]; then
+			    mv "$NAME.torrent" "$TORRENTS$PREPEND$NAME.torrent"
+			else
+			    echo -e "\nmktorrent test completed\ntorrent saved: $TMPPATH$NAME.torrent"
+			    echo "### mktorrent test completed - torrent saved: $TMPPATH$NAME.torrent" >> $LOGFILE
+			fi
+		fi
+
 		echo "### auto upload stopped at: `date`" >> $LOGFILE
 		cat $LOGFILE >> $MAINLOG
 		rm -f login$TMP.tmp cookies$TMP.tmp dupecheck$TMP.tmp "$NAME.torrent" $LOGFILE
@@ -710,7 +766,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	disown %%
 
 	# prepare the upload command
-	UPLOADCMD="'$CURL' -s -k -o upload$TMP.tmp -b cookies$TMP.tmp -H 'Expect:' -F '$UPLOADCAT=$CAT' -F '$UPLOADTOR=@$NAME.torrent' -F '$UPLOADNFO=@$NFO' $UPLOADXTRA '$UPLOADURL'"
+	UPLOADCMD="'$CURL' -s -k -o upload$TMP.tmp -b cookies$TMP.tmp -H 'Expect:' -F '$UPLOADCAT=$CAT' -F '$UPLOADTOR=@$NAME.torrent' -F '$UPLOADNFO=@$NFO' -F '$UPLOADDESC=<$NFO' $UPLOADXTRA '$UPLOADURL'"
 
 	# execute the upload command (need to use eval for $UPLOADXTRA)
 	eval $UPLOADCMD
