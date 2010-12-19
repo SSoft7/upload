@@ -59,7 +59,7 @@ cd ~/
 wget http://libtorrent.rakshasa.no/downloads/rtorrent_fast_resume.pl
 }}}
 
-In order to use _rtorrent_fast_resume.pl_ you need Convert::Bencode from CPAN. If you do not have this installed you can do so by executing the following command as _*sudo*_ or _*root*_:
+In order to use _rtorrent_fast_resume.pl_ you need Convert::Bencode from CPAN. If you do not have this installed you can do so by executing the following command as _*sudo*_ or _*root*_ (so yes, this means that if you do not have this permission and are not able to ask someone to do this for you that you cannot use _rtorrent_fast_resume.pl_):
 {{{
 perl -MCPAN -e 'install Convert::Bencode'
 }}}
