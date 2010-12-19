@@ -2,7 +2,7 @@
 
 == Introduction ==
 
-Here you can find information on how to configure the .webui.rc file. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
+Here you can find information on how to configure the *.webui.rc* file. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
 
 
 == The .webui.rc configuration ==
@@ -40,7 +40,7 @@ Here you can set whether the size of the directory will be shown when you hover 
 {{{
 debug = 0
 }}}
-If you set this option to 1 the upload command will not be executed but it will be printed at the top of the page. This can be used to check if the command is correct.
+If you set this option to 1 the upload command will not be executed but it will be printed at the top of the page. This can be used to check if the command is correct. If this setting does not exists or is empty it will be taken from the *settings.php* file.
 
 {{{
 sites = AO, TV
