@@ -12,9 +12,9 @@
   * [Configuration Configuration]
     * [Configuration#Introduction Introduction]
     * [Configuration#The_home_(resource)_files The home (resource) files]
-      * [Configuration#The_.webui.rc_file The .webui.rc file]
-      * [Configuration#The_.upload.rc_file The .upload.rc file]
-    * [Configuration#The_web_files The web files]
+      * [uploadrc The .upload.rc file]
+      * [webuirc The .webui.rc file]
+    * [webconfig The web files]
 
 ----
 
