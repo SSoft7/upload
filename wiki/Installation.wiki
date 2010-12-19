@@ -5,7 +5,58 @@
 
 == Introduction ==
 
-Here you can find information on how to install the upload script. If you want to know more about the functionalities of the script you can look on the [Overview overview] page. To use the upload script you need some other required programs, information about this can be found on the [Required required] page.
+Here you can find information on how to install the upload script. If you want to know more about the functionalities of the script you can look on the [Overview overview] page.
+
+
+== Requirements ==
+
+To be able to use the upload script there are some other programs required, here is a list of the required programs:
+
+*bash v3.2 or higher*
+You can check your bash version with the following command:
+{{{
+bash --version
+}}}
+If you have an old bash version you can most likely update it with the following command (for debian-based distro's):
+{{{
+apt-get update
+apt-get upgrade
+}}}
+
+*curl*
+You can check if you have curl installed with the following command:
+{{{
+which curl
+}}}
+This should output something like /usr/bin/curl, if you do not get any output curl is most likely not installed. To install curl you can run the following command as _*root*_ or _*sudo*_:
+{{{
+apt-get install curl
+}}}
+More information about curl can be found on the [http://curl.haxx.se/ curl website] and information about compiling it manually can be found on the [http://curl.haxx.se/docs/install.html curl install page].
+
+*mktorrent*
+You can check if you have mktorrent installed with the following command:
+{{{
+which mktorrent
+}}}
+This should output something like /usr/local/bin/mktorrent, if you do not get any output mktorrent is most likely not installed. To install mktorrent you can run the following commands:
+{{{
+wget http://downloads.sourceforge.net/mktorrent/mktorrent-1.0.tar.gz
+tar -xzf mktorrent-1.0.tar.gz
+rm mktorrent-1.0.tar.gz
+cd mktorrent-1.0/
+make USE_LARGE_FILES=1
+make install
+}}}
+The _make install_ command should be executed as _*root*_ or _*sudo*_, if you do not have this privilege you can also move the _mktorrent_ file which has been created in the mktorrent-1.0/ dir to your local _/bin_ dir. More information about your local _/bin_ dir can be found in the [Installation#The_upload_script_and_wrapper upload script and wrapper] part of this wiki page.
+
+*rtorrent_fast_resume.pl* (optional)
+It is recommended that you use _rtorrent_fast_resume.pl_ with this script, however this is not required. The reason it is recommended is because it will allow you to skip the initial hash check when the torrent gets added to rtorrent. As you are the person who created the torrent you can be certain that you have the files from the torrent 100% complete.
+_rtorrent_fast_resume.pl_ can be downloaded from the [http://libtorrent.rakshasa.no/ libtorrent] page. To download the script to your home directory you can execute the following command:
+{{{
+cd ~/
+wget http://libtorrent.rakshasa.no/downloads/rtorrent_fast_resume.pl
+}}}
 
 
 == The upload script and wrapper ==
