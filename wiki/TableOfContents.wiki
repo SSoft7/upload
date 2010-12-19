@@ -4,12 +4,17 @@
 ----
 
   * [Overview Overview]
-  * [Install Installation]
-    * [Install#Introduction Introduction]
-    * [Install#The_upload_script_and_wrapper The upload script and wrapper]
-    * [Install#The_home_(resource)_files The home (resource) files]
-    * [Install#The_web_files The web files]
-  * [Configure Configuration]
+  * [Installation Installation]
+    * [Installation#Introduction Introduction]
+    * [Installation#The_upload_script_and_wrapper The upload script and wrapper]
+    * [Installation#The_home_(resource)_files The home (resource) files]
+    * [Installation#The_web_files The web files]
+  * [Configuration Configuration]
+    * [Configuration#Introduction Introduction]
+    * [Configuration#The_home_(resource)_files The home (resource) files]
+      * [Configuration#The_.webui.rc_file The .webui.rc file]
+      * [Configuration#The_.upload.rc_file The .upload.rc file]
+    * [Configuration#The_web_files The web files]
 
 ----
 
