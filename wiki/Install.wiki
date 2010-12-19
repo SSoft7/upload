@@ -5,7 +5,7 @@
 
 == Introduction ==
 
-Here you can find information on how to install the upload script. If you want to know more about the functionalities you can look on the [http://code.google.com/p/upload/wiki/Overview overview] page.
+Here you can find information on how to install the upload script. If you want to know more about the functionalities of the script you can look on the [http://code.google.com/p/upload/wiki/Overview overview] page.
 
 
 == The upload script and wrapper ==
