@@ -10,7 +10,7 @@ Here you can find information on how to configure the upload script files. If yo
 
 == The home (resource) files ==
 
-In the home directory you can find two different kinds of resource files, the .webui.rc file which holds information for the webui, and the .upload.rc type files which hold information about the sites you can/want to upload to.
+In the home directory you can find two different kinds of resource files, the .webui.rc file which holds information for the webui, and the `.upload.rc` type files which hold information about the sites you can/want to upload to.
 
 
 === The .upload.rc file ===
@@ -29,7 +29,7 @@ In the file itself there are already comments with an explanation what the setti
 
 == The web files ==
 
-In the webui directory there is only one file you need to edit which is the settings.php file. You can however if you want to add more .css files, this can be easily done by copying either the light.css or dark.css file and replacing the values.
+In the webui directory there is only one file you need to edit which is the `settings.php` file. You can however if you want to add more .css files, this can be easily done by copying either the `light.css` or `dark.css` file and replacing the values.
 
 In the file itself there are already comments with an explanation what the setting is for, however on the following wiki page they are explained in more detail where possible:
 
