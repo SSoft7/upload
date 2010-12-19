@@ -18,6 +18,12 @@
     * [Configuration#Introduction Introduction]
     * [Configuration#The_home_(resource)_files The home (resource) files]
       * [uploadrc The .upload.rc file]
+        * [uploadrc#login_settings login settings]
+        * [uploadrc#search_settings search settings]
+        * [uploadrc#upload_settings upload settings]
+        * [uploadrc#path_settings path settings]
+        * [uploadrc#advanced_settings advanced settings]
+        * [uploadrc#filter_settings filter settings]
       * [webuirc The .webui.rc file]
     * [webconfig The web files]
 
