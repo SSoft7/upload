@@ -5,7 +5,7 @@
 
 == Introduction ==
 
-Here you can find information on how to install the upload script. If you want to know more about the functionalities of the script you can look on the [Overview overview] page.
+Here you can find information on how to install the upload script. If you want to know more about the functionalities of the script you can look on the [Overview overview] page. To use the upload script you need some other required programs, information about this can be found on the [Required required] page.
 
 
 == The upload script and wrapper ==
@@ -37,12 +37,12 @@ rm -r uploadbin/
 
 if you do not have _*root*_ or _*sudo*_ you can also move these files to your local bin directory:
 {{{
-mv uploadbin/upload ~/bin/
-mv uploadbin/uploadwrap ~/bin/
+mv uploadbin/upload ~/bin
+mv uploadbin/uploadwrap ~/bin
 rm -r uploadbin/
 }}}
 
-If your local _/bin/_ directory does not exist yet you can easily create it with the mkdir command:
+If your local _/bin_ directory does not exist yet you can easily create it with the mkdir command:
 {{{
 mkdir ~/bin
 }}}
