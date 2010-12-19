@@ -8,23 +8,32 @@
 Here you can find information on how to configure the upload script files. If you want to know more about the functionalities of the script you can look on the [/Overview overview] page.
 
 
-== The home (resource) files ==
+== The home directory ==
 
 In the home directory you can find two different kinds of resource files, the `.webui.rc` file which holds information for the webui, and the `.upload.rc` type files which hold information about the sites you can/want to upload to.
 
 
-=== The .upload.rc file ===
+=== .upload.rc ===
 
 In the file itself there are already comments with an explanation what the setting is for, however on the following wiki page they are explained in more detail where possible:
 
 [uploadrc .upload.rc configuration]
 
 
-=== The .webui.rc file ===
+=== .webui.rc ===
 
 In the file itself there are already comments with an explanation what the setting is for, however on the following wiki page they are explained in more detail where possible:
 
 [webuirc .webui.rc configuration]
+
+
+=== wrapper ===
+
+If you are planning on using the webui you need to edit a single line in the `wrapper` file:
+{{{
+HOME=/home/user
+}}}
+In this enter your home path (most likely just replace `user` with your username).
 
 
 == rtorrent ==
