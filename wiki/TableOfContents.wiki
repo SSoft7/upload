@@ -1,5 +1,7 @@
 = Uploader =
 
+----
+
   * [Overview Overview]
   * [Install Installation]
     * [Install#Introduction Introduction]
@@ -8,5 +10,6 @@
     * [Install#The_web_files The web files]
   * [Configure Configuration]
 
+----
 
 [https://www.paypal.com/cgi-bin/webscr?cmd=_donations&currency_code=EUR&business=98L2P7LC3PNJY&item_name=uploader https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif]
