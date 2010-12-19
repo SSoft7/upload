@@ -217,6 +217,7 @@ Here you can specify a regular expression which will be matched against the rele
 || `*` || match 0 or more times ||
 || + || match 1 or more times ||
 || {n} || n characters ||
+
 More information about bash regular expression can be found [http://www.faqs.org/docs/abs/HTML/regexp.html on this page]
 
 {{{
