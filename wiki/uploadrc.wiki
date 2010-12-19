@@ -110,7 +110,7 @@ The form input name which is used to submit the category. You can look at the pa
 {{{
 UPLOADDESCR="descr"
 }}}
-The form input name which is used to submit the description. You can look at the page source and look at the <input> tag which is used for the description. This is usually something like _description_ or _descr_.
+The form input name which is used to submit the description. You can look at the page source and look at the `<input>` tag which is used for the description. This is usually something like _description_ or _descr_.
 
 {{{
 UPLOADXTRA="-F 'submit=true' -F 'anonymous=on' -F 'auth=s0m34uthk3yf0rth3s1t3t00'"
@@ -206,7 +206,7 @@ Below are the settings of the filters explained in more detail:
 FILTERS[n]="^(house|simpsons|south.park).*S[0-9]{2}E[0-9]{2}.*XviD"
 EXCEPTS[n]="DSR|REPACK"
 }}}
-Here you can specify a regular expression which will be matched against the release name. There are several examples in the scripts with possible regular expressions to use, it might be a good idea to discuss setting up these filters with someone who is somewhat experienced with regular expression. A small explanation:
+Here you can specify a _case insensitive_ regular expression which will be matched against the release name. There are several examples in the scripts with possible regular expressions to use, it might be a good idea to discuss setting up these filters with someone who is somewhat experienced with regular expression. A small explanation:
 || *symbol* || *meaning* ||
 || ^ || start of the line ||
 || $ || end of the line ||
@@ -229,4 +229,4 @@ Here you can specify sizes which will be matched against the release directory. 
 {{{
 CATS[n]="TV/XviD"
 }}}
-Here you specify the category where the release should be uploaded into if it passes the filter. If the category option value is different then the category name you should *not* use the category name here but the category option (which is usually a number).
+Here you specify the category where the release should be uploaded into if it passes the filter. If the category option value is different then the category name you should *not* use the category name here but the category option (which is usually a number). If you do enter a category name it should be *case sensitive*
