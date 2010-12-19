@@ -4,7 +4,7 @@
 
 == Introduction ==
 
-Here you can find information on how to configure the .upload.rc type files. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
+Here you can find information on how to configure the `.upload.rc` type files. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
 
 
 == The .upload.rc configuration ==
@@ -24,7 +24,7 @@ The password you use to log in to the website
 {{{
 LOGINURL="http://www.torrentsite.tld/login.php"
 }}}
-The URL where the login form data should be posted to. For gazelle installations this is usually _login.php_ and for TBDev installations this is usually _takelogin.php_. You can look at the page source what is written in the action="" part of the `<form>` tag.
+The URL where the login form data should be posted to. For gazelle installations this is usually `login.php` and for TBDev installations this is usually `takelogin.php`. You can look at the page source what is written in the `action=""` part of the `<form>` tag.
 
 {{{
 LOGINTXT="<title>Login"
@@ -34,12 +34,12 @@ A _unique_ piece of text from the login page which will be used to see if we are
 {{{
 LOGINUSR="username"
 }}}
-The form input name which is used to submit the username. You can look at the page source and look at the `<input>` tag which is used for the username. This is usually something like _username_ or _user_.
+The form input name which is used to submit the username. You can look at the page source and look at the `<input>` tag which is used for the username. This is usually something like `username` or `user`.
 
 {{{
 LOGINPWD="password"
 }}}
-The form input name which is used to submit the password. You can look at the page source and look at the `<input>` tag which is used for the password. This is usually something like _password_ or _pass_.
+The form input name which is used to submit the password. You can look at the page source and look at the `<input>` tag which is used for the password. This is usually something like `password` or `pass`.
 
 
 === search settings ===
@@ -47,7 +47,7 @@ The form input name which is used to submit the password. You can look at the pa
 {{{
 SEARCHURL="http://www.torrentsite.tld/torrents.php?search="
 }}}
-The complete URL which is used to search for a release. You can execute a search on the site and look what is in the address bar and copy that here (without the name of what you searched for obviously). The release you want to upload will be appended to the end of this URL so make sure that if there are any extra options in the URL you add those before the search name. i.e. if the url would be _...torrents.php?search=name&incldead=1_ you should enter the URL here as _...torrents.php?incldead=1&search=_
+The complete URL which is used to search for a release. You can execute a search on the site and look what is in the address bar and copy that here (without the name of what you searched for obviously). The release you want to upload will be appended to the end of this URL so make sure that if there are any extra options in the URL you add those before the search name. i.e. if the url would be `...torrents.php?search=name&incldead=1` you should enter the URL here as `...torrents.php?incldead=1&search=`
 
 {{{
 SEARCHTXT="No results found"
@@ -72,9 +72,9 @@ A _unique_ piece of text from the search page which will be used find the exact 
 {{{
 DUPECMD="cut -d \" -f 2"
 }}}
-This is the command that will be executed to extract the download link from the complete line which has been obtained by searching for the _DUPETXT_.
+This is the command that will be executed to extract the download link from the complete line which has been obtained by searching for the `DUPETXT`.
 This might be too advanced for some users that are not familiar with linux so I suggest you ask someone that is more experienced with string extraction in linux command line to help you with this.
-Suggestions are to use the [http://unixhelp.ed.ac.uk/CGI/man-cgi?cut _cut_] *OR* [http://unixhelp.ed.ac.uk/CGI/man-cgi?sed _sed_] commands. In the previous example it uses _cut_, in the next example it uses _sed_:
+Suggestions are to use the [http://unixhelp.ed.ac.uk/CGI/man-cgi?cut `cut`] *OR* [http://unixhelp.ed.ac.uk/CGI/man-cgi?sed `sed`] commands. In the previous example it uses `cut`, in the next example it uses `sed`:
 {{{
 DUPECMD="sed s/.*\(download.php.*torrent\).*/\1/"
 }}}
@@ -85,7 +85,7 @@ DUPECMD="sed s/.*\(download.php.*torrent\).*/\1/"
 {{{
 UPLOADURL="http://www.torrent-site.tld/upload.php"
 }}}
-The URL where the upload form data should be posted to. You can look at the page source what is written in the action="" part of the <form> tag.
+The URL where the upload form data should be posted to. You can look at the page source what is written in the `action=""` part of the `<form>` tag.
 
 {{{
 ANNOUNCEURL="http://tracker.torrent-site.tld/s0m3p4ssk4yf0rth3s1t3/announce"
@@ -95,28 +95,28 @@ This is your _personal_ announce URL used to upload the torrent.
 {{{
 UPLOADTOR="torrent"
 }}}
-The form input name which is used to submit the torrent. You can look at the page source and look at the `<input>` tag which is used for the torrent. This is usually something like _torrent_ (TBDev) or _file`_`input_ (Gazelle).
+The form input name which is used to submit the torrent. You can look at the page source and look at the `<input>` tag which is used for the torrent. This is usually something like `torrent` (TBDev) or `file_input` (Gazelle).
 
 {{{
 UPLOADNFO="nfo"
 }}}
-The form input name which is used to submit the nfo. You can look at the page source and look at the `<input>` tag which is used for the torrent. This is usually something like _nfo_ (TBDev) or _nfo`_`file`_`input_ (Gazelle).
+The form input name which is used to submit the nfo. You can look at the page source and look at the `<input>` tag which is used for the torrent. This is usually something like `nfo` (TBDev) or `nfo_file_input` (Gazelle).
 
 {{{
 UPLOADCAT="cat"
 }}}
-The form input name which is used to submit the category. You can look at the page source and look at the `<select>` tag which is used for the category. This is usually something like _category_ (TBDev) or _type_ (Gazelle).
+The form input name which is used to submit the category. You can look at the page source and look at the `<select>` tag which is used for the category. This is usually something like `category` (TBDev) or `type` (Gazelle).
 
 {{{
 UPLOADDESCR="descr"
 }}}
-The form input name which is used to submit the description. You can look at the page source and look at the `<input>` tag which is used for the description. This is usually something like _description_ or _descr_.
+The form input name which is used to submit the description. You can look at the page source and look at the `<input>` tag which is used for the description. This is usually something like `description` or `descr`.
 
 {{{
 UPLOADXTRA="-F 'submit=true' -F 'anonymous=on' -F 'auth=s0m34uthk3yf0rth3s1t3t00'"
 }}}
-here you can enter any other required (or optional) values that need to be posted. In Gazelle installations this is usually submit=true and possible auth=authkey. Some sites also have a checkbox fo anonoymous so something like anonymous=on could be used.
-These values should be added in the form of _-F 'name=value'. Other possibilities are _-A 'Mozilla/4.0'_ to specify a specific user agent string being sent to the server.
+here you can enter any other required (or optional) values that need to be posted. In Gazelle installations this is usually `submit=true` and possible `auth=authkey`. Some sites also have a checkbox fo anonoymous so something like `anonymous=on` could be used.
+These values should be added in the form of `-F 'name=value'`. Other possibilities are `-A 'Mozilla/4.0'` to specify a specific user agent string being sent to the server.
 
 
 === path settings ===
@@ -134,27 +134,27 @@ This should be the path to your torrent client watch directory, after the torren
 {{{
 TMPPATH="/tmp/"
 }}}
-This is the directory where the script will create the temporarily logfile, the torrent before it is uploaded and moved to your torrents directory and other things. Normally you could leave this to /tmp/ however if you are with multiple users on a single server or expect to be uploading the same release to multiple sites at the same time it is recommended that you change this.
+This is the directory where the script will create the temporarily logfile, the torrent before it is uploaded and moved to your torrents directory and other things. Normally you could leave this to `/tmp/` however if you are with multiple users on a single server or expect to be uploading the same release to multiple sites at the same time it is recommended that you change this.
 
 {{{
 LOGFILE="/home/user/upload.log"
 }}}
-This is the path to the file where the upload script will log whether uploads have failed of succeeded. If you do not want to use logging set this path to /dev/null.
+This is the path to the file where the upload script will log whether uploads have failed of succeeded. If you do not want to use logging set this path to `/dev/null`.
 
 {{{
 CURL="curl"
 }}}
-This is the path to the curl binary. If the binary is located in your PATH you can just enter curl.
+This is the path to the `curl` binary. If the binary is located in your PATH you can just enter `curl`.
 
 {{{
 MKT="mktorrent"
 }}}
-This is the path to the mktorrent binary. If the binary is located in your PATH you can just enter mktorrent.
+This is the path to the `mktorrent` binary. If the binary is located in your PATH you can just enter `mktorrent`.
 
 {{{
 RFR="/home/user/rtorrent_fast_resume.pl"
 }}}
-This is the path to rtorrent_fast_resume.pl, if you do not wish to use this you can leave it empty.
+This is the path to `rtorrent_fast_resume.pl`, if you do not wish to use this you can leave it empty.
 
 
 === advanced settings ===
@@ -178,7 +178,7 @@ ALLCATS=(
         "0day" "Ebook" "Misc"
 )
 }}}
-This array holds all the categories you are able to upload into on the site. Some characters like |, ) and ( should be escaped (add a backslash before the character). You should check check source of the upload page to see if the `<option>` tag value has a different value than the category name (this could be a number on some sites, mostly TBDev based). If the option value differs from the category name you should add this *after* the category name in the array.
+This array holds all the categories you are able to upload into on the site. Some characters like `|`, `)` and `(` should be escaped (add a backslash before the character). You should check check source of the upload page to see if the `<option>` tag value has a different value than the category name (this could be a number on some sites, mostly TBDev based). If the option value differs from the category name you should add this *after* the category name in the array.
 
 {{{
 KEYVAL=0
@@ -198,7 +198,7 @@ MAXS[n]=400
 CATS[n]="TV/XviD"
 let n+=1
 }}}
-The filters are needed if you want to allow executing the upload script without specifying a category (i.e. from another program like rtorrent). If a category has not been specified the script will check these filters to see if a match has been found and if so it will use the category specified here.
+The filters are needed if you want to allow executing the upload script without specifying a category (i.e. from another program like `rtorrent`). If a category has not been specified the script will check these filters to see if a match has been found and if so it will use the category specified here.
 
 Below are the settings of the filters explained in more detail:
 
