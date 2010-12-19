@@ -35,7 +35,7 @@ Here you can set the theme/stylesheet being used. By default there are only ligh
 {{{
 sizes = 1
 }}}
-Here you can set whether the size of the directory will be shown when you hover over the release name (i.e. Release - 1.37 GiB). Set this to 1 to enable it by default or to 0 to disable it by default. 
+Here you can set whether the size of the directory will be shown when you hover over the release name (i.e. Release - 1.37 GiB). Set this to 1 to enable it by default or to 0 to disable it by default. If this setting does not exists or is empty it will be taken from the *settings.php* file.
 
 {{{
 debug = 0
