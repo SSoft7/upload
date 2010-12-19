@@ -207,24 +207,16 @@ FILTERS[n]="^(house|simpsons|south.park).*S[0-9]{2}E[0-9]{2}.*XviD"
 EXCEPTS[n]="DSR|REPACK"
 }}}
 Here you can specify a regular expression which will be matched against the release name. There are several examples in the scripts with possible regular expressions to use, it might be a good idea to discuss setting up these filters with someone who is somewhat experienced with regular expression. A small explanation:
-
-`^ means the start of the line`
-
-`$ means the end of the line`
-
-`(a|b|c) means match either a, b or c`
-
-`[a-z] means match anything from a to z`
-
-`. means match any character`
-
-`? means match 0 or 1 time`
-
-`* means match 0 or more times`
-
-`+ means match 1 or more times`
-
-`{n} means n characters`
+|| symbol || meaning ||
+|| ^ || start of the line ||
+|| $ || end of the line ||
+|| (a|b|c) || match either a, b or c ||
+|| [a-z] || match anything from a to z ||
+|| . || match any character ||
+|| ? || match 0 or 1 time ||
+|| `*` || match 0 or more times ||
+|| + || match 1 or more times ||
+|| {n} || n characters ||
 
 {{{
 MINS[n]=70
