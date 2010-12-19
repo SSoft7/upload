@@ -5,7 +5,7 @@
 
 == Introduction ==
 
-Here you can find information on how to install the chat plugin. If you want to know more about the functionalities of this plugin you can look on the [http://code.google.com/p/upload/wiki/Overview overview] page.
+Here you can find information on how to install the upload script. If you want to know more about the functionalities you can look on the [http://code.google.com/p/upload/wiki/Overview overview] page.
 
 
 == The upload script and wrapper ==
@@ -59,6 +59,22 @@ wget http://upload.googlecode.com/files/home-v0.9.1.tar.gz
 tar -zxf home-v0.9.1.tar.gz
 rm home-v0.9.1.tar.gz
 }}}
+
+for security make sure you modify the upload resource files so you are the only one being able to access them:
+{{{
+chmod 600 upload/*.rc
+}}}
+
+however the .webui.rc file should be readable for the web user:
+{{{
+chmod 644 upload/.webui.rc
+}}}
+
+the wrapper file should be modified to be executable:
+{{{
+chmod 700 upload/wrapper
+}}}
+
 
 you can now edit the resource files to configure the uploader, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration configuration] page.
 
