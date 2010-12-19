@@ -10,7 +10,7 @@ Here you can find information on how to configure the upload script files. If yo
 
 == The home (resource) files ==
 
-In the home directory you can find two different kinds of resource files, the .webui.rc file which holds information for the webui, and the `.upload.rc` type files which hold information about the sites you can/want to upload to.
+In the home directory you can find two different kinds of resource files, the `.webui.rc` file which holds information for the webui, and the `.upload.rc` type files which hold information about the sites you can/want to upload to.
 
 
 === The .upload.rc file ===
@@ -25,6 +25,15 @@ In the file itself there are already comments with an explanation what the setti
 In the file itself there are already comments with an explanation what the setting is for, however on the following wiki page they are explained in more detail where possible:
 
 [webuirc .webui.rc configuration]
+
+
+== rtorrent ==
+
+If you have the `upload` and `uploadwrap` script installed and configured your `.upload.rc` files you can add a line to your `.rtorrent.rc` so it will call the `uploadwrap` file upon a download's completion:
+{{{
+system.method.set_key = event.download.finished,upload_torrent,"execute=uploadwrap,$d.get_chunk_size=,$d.get_base_path="
+}}}
+This will call the `uploadwrap` file which in turn executes the `upload` script. It will do this without specifying a category to upload in so you need to set up filters in your `.upload.rc`.
 
 
 == The webui ==
