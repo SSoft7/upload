@@ -42,6 +42,13 @@ mv uploadbin/uploadwrap ~/bin/
 rm -r uploadbin/
 }}}
 
+If your local _/bin/_ directory does not exist yet you can easily create it with the mkdir command:
+{{{
+mkdir ~/bin
+}}}
+
+This directory will be prepended to your _PATH_ variable upon logging in so you might have to log out and log in in order to be able to run the upload script from the _PATH_. If you have any active screen sessions (in which you want to use the upload command) you will have to restart these as well. Alternatively you could execute the script as _/home/user/bin/upload_ (replacing user with your username) rather than _upload_.
+
 
 == The home (resource) files ==
 
