@@ -2,22 +2,15 @@
 
 == Introduction ==
 
-Here you can find information on how to configure the *settings.php* file for the webui. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
+Here you can find information on how to configure the `settings.php` file for the webui. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
 
 
 == The settings.php configuration ==
 
 {{{
-$users = array(
-    "user"      => array(
-        "uploader" => "/home/user/upload/"
-    ),
-    "someone"      => array(
-        "uploader" => "/home/someone/upload/"
-    )
-);
+$homedir = "/home";
 }}}
-Here you have to set which users will have access to the webui. The only parts which need to be filled in are the (ssh) username and the path to their upload directory. The rest of the user's settings will be retrieved from the .webui.rc file.
+Here you have to enter the path to the home directory. When users try to log in it will check for the username in this directory and if one exists it will look for the `.webui.rc` file for a matching entered password.
 
 {{{
 $sites = array(
@@ -38,12 +31,12 @@ $sites = array(
     )
 );
 }}}
-Here you have to enter which sites and their corresponding categories will be available to be shown in the dropdowns. The dropdowns on the webui page will have the same order as this array unless the sitesort and/or catsort values are set to 1. The array of categories is slightly different from the one in the .upload.rc files. Here the categories should be separated by a comma and it should hold only category names (so if you have the IDs after the category in the .upload.rc file you should *not* have those here)
+Here you have to enter which sites and their corresponding categories will be available to be shown in the dropdowns. The dropdowns on the webui page will have the same order as this array unless the sitesort and/or catsort values are set to 1. The array of categories is slightly different from the one in the `.upload.rc` files. Here the categories should be separated by a comma and it should hold only category names (so if you have the IDs after the category in the `.upload.rc` file you should *not* have those here)
 
 {{{
 $default["theme"] = "light";
 }}}
-Here you can set the default theme/stylesheet that will be used if the user has not specified one in his .webui.rc file. The possible options are light or dark, or if you added any custom stylesheet files you can use those as well. This should be the name of the .css file without the .css extension.
+Here you can set the default theme/stylesheet that will be used if the user hasn't specified one. The possible options are light or dark, or if you added any custom stylesheet files you can use those as well. This should be the name of the .css file without the .css extension.
 
 {{{
 $default["sizes"] = 0;
