@@ -25,6 +25,7 @@
         * [uploadrc#advanced_settings advanced settings]
         * [uploadrc#filter_settings filter settings]
       * [webuirc .webui.rc]
+      * [Configuration#wrapper wrapper]
     * [Configuration#rTorrent rTorrent]
     * [Configuration#The_WebUI The WebUI]
       * [Configuration#visudo visudo]
