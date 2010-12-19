@@ -37,7 +37,7 @@ This should open the `/etc/sudoers.tmp` file where you can add the following lin
 {{{
 www-data ALL=(user1, user2) NOPASSWD: /home/user1/upload/wrapper, /home/user2/upload/wrapper
 }}}
-Of course you need to replace user1 and user2 with the user(s) you want to be able to use the webui upload command.
+Of course you need to replace user1 and user2 with the user(s) you want to be able to use the webui upload command. If your web user has a different name than `www-data` (i.e. `http`) you need to replace this as well.
 
 In the webui directory there is only one file you need to edit which is the `settings.php` file. You can however if you want to add more .css files, this can be easily done by copying either the `light.css` or `dark.css` file and replacing the values.
 
