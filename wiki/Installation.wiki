@@ -14,33 +14,33 @@ To be able to use the upload script there are some other programs required, here
 
 === bash ===
 
-For the upload script you are required to use bash *version 3.2 or higher*. You can check your bash version with the following command:
+For the upload script you are required to use `bash` *version 3.2 or higher*. You can check your `bash` version with the following command:
 {{{
 bash --version
 }}}
-If you have an old bash version you can most likely update it with the following command (for debian-based distro's):
+If you have an old `bash` version you can most likely update it with the following command (for debian-based distro's):
 {{{
 apt-get update
 apt-get upgrade
 }}}
 
 === curl ===
-You can check if you have curl installed with the following command:
+You can check if you have `curl` installed with the following command:
 {{{
 which curl
 }}}
-This should output something like _/usr/bin/curl_, if you do not get any output curl is most likely not installed. To install curl you can run the following command as _*root*_ or _*sudo*_ (for debian-based distro's):
+This should output something like `/usr/bin/curl`, if you do not get any output `curl` is most likely not installed. To install `curl` you can run the following command as *root* or *sudo* (for debian-based distro's):
 {{{
 apt-get install curl
 }}}
-More information about curl can be found on the [http://curl.haxx.se/ curl website] and information about compiling it manually can be found on the [http://curl.haxx.se/docs/install.html curl install page].
+More information about `curl` can be found on the [http://curl.haxx.se/ curl website] and information about compiling it manually can be found on the [http://curl.haxx.se/docs/install.html curl install page].
 
 === mktorrent ===
-You can check if you have mktorrent installed with the following command:
+You can check if you have `mktorrent` installed with the following command:
 {{{
 which mktorrent
 }}}
-This should output something like _/usr/local/bin/mktorrent_, if you do not get any output mktorrent is most likely not installed. To install mktorrent you can run the following commands:
+This should output something like `/usr/local/bin/mktorrent`, if you do not get any output `mktorrent` is most likely not installed. To install `mktorrent` you can run the following commands:
 {{{
 wget http://downloads.sourceforge.net/mktorrent/mktorrent-1.0.tar.gz
 tar -xzf mktorrent-1.0.tar.gz
@@ -49,17 +49,17 @@ cd mktorrent-1.0/
 make USE_LARGE_FILES=1
 make install
 }}}
-The _make install_ command should be executed as _*root*_ or _*sudo*_, if you do not have this privilege you can also move the _mktorrent_ file which has been created in the mktorrent-1.0/ dir to your local _/bin_ dir. More information about your local _/bin_ dir can be found in the [Installation#The_upload_script_and_wrapper upload script and wrapper] part of this wiki page.
+The `make install` command should be executed as *root* or *sudo*, if you do not have this privilege you can also move the `mktorrent` file which has been created in the `mktorrent-1.0/` dir to your local `/bin` dir. More information about your local `/bin` dir can be found in the [Installation#The_upload_script_and_wrapper upload script and wrapper] part of this wiki page.
 
 === rtorrent_fast_resume.pl ===
-It is recommended that you use _rtorrent_fast_resume.pl_ with this script, however this is *not required*. The reason it is recommended is because it will allow you to skip the initial hash check when the torrent gets added to rtorrent. As you are the person who created the torrent you can be certain that you have the files from the torrent 100% complete.
-_rtorrent_fast_resume.pl_ can be downloaded from the [http://libtorrent.rakshasa.no/ libtorrent] page. To download the script to your home directory you can execute the following command:
+It is recommended that you use `rtorrent_fast_resume.pl` with this script, however this is *not required*, and if you do not have *root* or *sudo* you might not be able to use it. The reason it is recommended is because it will allow you to skip the initial hash check when the torrent gets added to `rtorrent`. As you are the person who created the torrent you can be certain that you have the files from the torrent 100% complete.
+`rtorrent_fast_resume.pl` can be downloaded from the [http://libtorrent.rakshasa.no/ libtorrent] page. To download the script to your home directory you can execute the following command:
 {{{
 cd ~/
 wget http://libtorrent.rakshasa.no/downloads/rtorrent_fast_resume.pl
 }}}
 
-In order to use _rtorrent_fast_resume.pl_ you need Convert::Bencode from CPAN. If you do not have this installed you can do so by executing the following command as _*sudo*_ or _*root*_ (so yes, this means that if you do not have this permission and are not able to ask someone to do this for you that you cannot use _rtorrent_fast_resume.pl_):
+In order to use `rtorrent_fast_resume.pl` you need `Convert::Bencode` from CPAN. If you do not have this installed you can do so by executing the following command as *sudo* or *root* (so yes, this means that if you do not have this permission and are not able to ask someone to do this for you that you cannot use `rtorrent_fast_resume.pl`):
 {{{
 perl -MCPAN -e 'install Convert::Bencode'
 }}}
@@ -68,7 +68,7 @@ When it asks you if you want to automate the installation answer yes.
 
 == The upload script and wrapper ==
 
-download the bin directory part of the script from SVN:
+Download the bin directory part of the script from SVN:
 {{{
 svn checkout http://upload.googlecode.com/svn/trunk/bin uploadbin
 }}}
@@ -80,42 +80,42 @@ tar -zxf bin-v0.9.1.tar.gz
 rm bin-v0.9.1.tar.gz
 }}}
 
-now make the files executable:
+Now make the files executable:
 {{{
 chmod 755 uploadbin/upload
 chmod 755 uploadbin/uploadwrap
 }}}
 
-and finally move them to the /usr/local/bin/ directory (note: you need either _*root*_ or _*sudo*_ for this):
+And finally move them to the `/usr/local/bin/` directory (note: you need either *root* or *sudo* for this):
 {{{
 mv uploadbin/upload /usr/local/bin/
 mv uploadbin/uploadwrap /usr/local/bin/
 rm -r uploadbin/
 }}}
 
-if you do not have _*root*_ or _*sudo*_ you can also move these files to your local bin directory:
+If you do not have *root* or *sudo* permissions you can also move these files to your local `/bin` directory:
 {{{
 mv uploadbin/upload ~/bin
 mv uploadbin/uploadwrap ~/bin
 rm -r uploadbin/
 }}}
 
-If your local _/bin_ directory does not exist yet you can easily create it with the mkdir command:
+If your local `/bin` directory does not exist yet you can easily create it with the `mkdir` command:
 {{{
 mkdir ~/bin
 }}}
 
-This directory will be prepended to your _PATH_ variable upon logging in so you might have to log out and log in in order to be able to run the upload script from the _PATH_. If you have any active screen sessions (in which you want to use the upload command) you will have to restart these as well. Alternatively you could execute the script as _/home/user/bin/upload_ (replacing user with your username) rather than _upload_.
+This directory will be prepended to your `PATH` variable upon logging in so you might have to log out and log in in order to be able to run the `upload` script from the `PATH`. If you have any active screen sessions (in which you want to use the `upload` command) you will have to restart these as well. Alternatively you could execute the script as `/home/user/bin/upload` (replacing user with your username) rather than `upload`.
 
 
 == The home (resource) files ==
 
-to get the files for your home directory move to your homedir:
+To get the files for your home directory move to your homedir:
 {{{
 cd ~/
 }}}
 
-and then download the home directory part of the script from SVN:
+Then download the home directory part of the script from SVN:
 {{{
 svn checkout http://upload.googlecode.com/svn/trunk/home upload
 }}}
@@ -127,33 +127,32 @@ tar -zxf home-v0.9.1.tar.gz
 rm home-v0.9.1.tar.gz
 }}}
 
-for security make sure you modify the upload resource files so you are the only one being able to access them:
+For security make sure you modify the upload resource files so you are the only one being able to access them:
 {{{
 chmod 600 upload/*.rc
 }}}
 
-however the .webui.rc file should be readable for the web user:
+However the `.webui.rc` file should be readable for the web user:
 {{{
 chmod 644 upload/.webui.rc
 }}}
 
-the wrapper file should be modified to be executable:
+The `wrapper` file should be modified to be executable:
 {{{
 chmod 700 upload/wrapper
 }}}
 
-
-you can now edit the resource files to configure the uploader, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration configuration] page.
+You can now edit the resource files, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration configuration] page.
 
 
 == The web files ==
 
-to get the files for the web directory move to the web directory (note: you need either _*root*_ or _*sudo*_ to download files to your web directory):
+To get the files for the web directory move to the web directory (note: you need either *root* or *sudo* to download files to your web directory):
 {{{
 cd /var/www/
 }}}
 
-and download the web directory part of the script from SVN:
+Download the web directory part of the script from SVN:
 {{{
 svn checkout http://upload.googlecode.com/svn/trunk/web uploader
 }}}
@@ -165,4 +164,4 @@ tar -zxf web-v0.9.1.tar.gz
 rm web-v0.9.1.tar.gz
 }}}
 
-you can now edit the settings.php file to configure the uploader webui and add the required line(s) to /etc/sudoers, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration configuration] page.
+You can now edit the `settings.php` file to configure the uploader webui and add the required line(s) to `/etc/sudoers`, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration configuration] page.
