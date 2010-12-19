@@ -36,7 +36,7 @@ HOME=/home/user
 In this enter your home path (most likely just replace `user` with your username).
 
 
-== rtorrent ==
+== rTorrent ==
 
 If you have the `upload` and `uploadwrap` script installed and configured your `.upload.rc` files you can add a line to your `.rtorrent.rc` so it will call the `uploadwrap` file upon a download's completion:
 {{{
