@@ -1,0 +1,82 @@
+= settings.php  =
+
+== Introduction ==
+
+Here you can find information on how to configure the settings.php file for the webui. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
+
+
+== The settings.php configuration ==
+
+{{{
+// list of users: user (string) => settings (array: setting (string) => value (mixed))
+// note: ending slash is required for setting uploader
+$users = array(
+    "user"      => array(
+        "uploader" => "/home/user/upload/"
+    ),
+    "someone"      => array(
+        "uploader" => "/home/someone/upload/"
+    )
+);
+}}}
+here you have to set which users will have access to the webui. The only parts which need to be filled in are the (ssh) username and the path to their upload directory. The rest of the user's settings will be retrieved from the .webui.rc file.
+
+{{{
+// list of sites and categories: site name or abbreviation (string) => categories (array: category (string))
+// note: the dropdowns have the same order as entered here unless setting catsort is true
+$sites = array(
+    "TV"  => array(
+        "Appz/0DAY", "Appz/Mac", "Appz/PC-ISO",
+        "Game/Packs", "Games/Misc", "Games/NDS", "Games/PC-ISO", "Games/PS3", "Games/PSP", "Games/Wii", "Games/X360",
+        "Documentaries", "Episodes/TV-Boxset", "BlurayTV", "Episodes/TV-DVDR", "Episodes/TV-Foreign", "Episodes/TV-XviD", "Episodes/TV-x264",
+        "Movies/Boxsets", "Movies/DVDR", "Movies/Foreign", "Movies/MDVDR", "Movies/XviD", "Movies/x264",
+        "Packs/Music", "Music/MP3", "Music/Video", "Retro/Music",
+        "Packs/0DAY", "Packs/Ebooks", "Requests", "Ebooks"
+    ),
+    "AO" => array(
+        "Movies|HD", "Movies|XviD", "Movies|DVDR", "Movies|Pack", "Movies|Pack-HD", "Movies|XXX",
+        "TV|XviD", "TV|HD", "TV|DVDR", "TV|Pack", "TV|Pack-HD",
+        "Apps|PC", "Apps|MAC", "Apps|Nix", "Apps|Mobile",
+        "Games|PC", "Games|Xbox", "Games|PS3", "Games|Wii",
+        "E-Books", "Misc."
+    )
+);
+}}}
+here you have to enter which sites and their corresponding categories will be available to be shown in the dropdowns.
+
+{{{
+// default theme: light / dark / custom
+// note: this will load light.css / dark.css / custom.css
+$default["theme"] = "light";
+}}}
+here you can set the default theme/stylesheet that will be used if the user has not specified one in his .webui.rc file.
+
+{{{
+// default show directory size on hover: 1 = yes, 0 = no
+$default["sizes"] = 0;
+}}}
+here you can set the default value if sizes should be shown when hovering over the release (i.e. 1.37 GiB).
+
+{{{
+// default directory sorting type: latest / alphabetically (string)
+$default["datasort"] = "latest";
+}}}
+here you can set the default data sorting that will be used when the user hasn't specified one.
+
+{{{
+// default directory sorting order: asc[ending] / desc[ending] (string)
+$default["dataorder"] = "desc";
+}}}
+here you can set the default data order that will be used when the user hasn't specified one.
+
+{{{
+// default sort sites alphabetically: 1 = yes, 0 = no
+$default["sitesort"] = 0;
+}}}
+here you can set if the sites will be sorted alphabetically if the user hasn't specified it.
+
+{{{
+// default sort categories alphabetically: 1 = yes, 0 = no
+$default["catsort"] = 0;
+}}}
+here you can set if the categories will be sorted alphabetically if the user hasn't specified it.
