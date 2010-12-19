@@ -144,7 +144,7 @@ The `wrapper` file should be modified to be executable:
 chmod 700 upload/wrapper
 }}}
 
-You can now edit the resource files, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration configuration] page.
+You can now edit the resource files, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration#The_home_directory configuration] page.
 
 
 == The WebUI ==
@@ -166,4 +166,4 @@ tar -zxf web-v0.9.1.tar.gz
 rm web-v0.9.1.tar.gz
 }}}
 
-You can now edit the `settings.php` file to configure the uploader webui and add the required line(s) to `/etc/sudoers`, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration configuration] page.
+You can now edit the `settings.php` file to configure the uploader webui and add the required line(s) to `/etc/sudoers`, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration#The_WebUI configuration] page.
