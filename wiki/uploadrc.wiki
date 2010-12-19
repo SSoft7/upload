@@ -1,0 +1,8 @@
+= .upload.rc =
+
+== Introduction ==
+
+Here you can find information on how to configure the .upload.rc type files. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
+
+
+== The .upload.rc configuration ==
