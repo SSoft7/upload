@@ -1,14 +1,14 @@
 #labels Featured,Phase-Implementation
-= Introduction =
+= Installation =
 
 <wiki:toc />
+
+== Introduction ==
 
 Here you can find information on how to install the chat plugin. If you want to know more about the functionalities of this plugin you can look on the [http://code.google.com/p/upload/wiki/Overview overview] page.
 
 
-== Installation ==
-
-=== The upload script and wrapper ===
+== The upload script and wrapper ==
 
 download the bin directory part of the script from SVN:
 {{{
@@ -41,7 +41,7 @@ mv uploadbin/uploadwrap ~/bin/
 }}}
 
 
-=== The home (resource) files ===
+== The home (resource) files ==
 
 to get the files for your home directory move to your homedir:
 {{{
@@ -63,7 +63,7 @@ rm home-v0.9.1.tar.gz
 you can now edit the resource files to configure the uploader, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration configuration] page.
 
 
-=== The web files ===
+== The web files ==
 
 to get the files for the web directory move to the web directory (note: you need either _*root*_ or _*sudo*_ to download files to your web directory):
 {{{
