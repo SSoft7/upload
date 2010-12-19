@@ -1,0 +1,18 @@
+#!/bin/bash
+HOME=/home/someone
+
+if [ $1 == "reset" ]; then
+	rm -rf "$2/.uploading"
+	rm -rf "$2/.uploaded"
+	rm -rf "$2/.uploaderror"
+elif [ $1 == "hide" ]; then
+	if [ -d "$2" ]; then
+		mkdir "$2/.hidden"
+	fi
+else
+	if [ -n "$4" ] && [[ $4 =~ ^[0-9]*$ ]] && [ $4 -ge 15 ] && [ $4 -le 28 ]; then
+		upload -y $3 -r "$1" -c "$2" "$3" >/dev/null 2>&1 &
+	else
+		upload -r "$1" -c "$2" "$3" >/dev/null 2>&1 &
+	fi
+fi

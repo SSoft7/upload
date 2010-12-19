@@ -42,6 +42,19 @@ SEARCHURL="http://www.torrentsite.tld/torrents.php?search="
 # search no result text: something _unique_ to check if no results are found
 SEARCHTXT="No results found"
 
+# download dupe: 1 = yes, 0 = no
+# note: only possible if download link is on the torrents page
+DUPEDL=0
+
+# URL that needs to be prepended to the download URL
+DUPEURL="http://www.torrentsite.tld/"
+
+# search download link text:  something _unique_ to find the exact line
+DUPETXT="action=download"
+
+# command to extract the download link from the complete line
+# note: test for the best way to get it outside the script first
+DUPECMD="cut -d \" -f 2"
 
 ####################################
 ##         UPLOAD SETTINGS        ##
@@ -61,6 +74,9 @@ UPLOADNFO="nfo"
 
 # upload form category: look for select NAME="category"
 UPLOADCAT="cat"
+
+# upload form description: look for input NAME="description"
+UPLOADDESCR="descr"
 
 # upload form extras: look for other inputs with NAME and VALUE
 # and add to the list with: -F 'name=value'
