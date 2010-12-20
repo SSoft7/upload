@@ -100,7 +100,7 @@ The form input name which is used to submit the torrent. You can look at the pag
 {{{
 UPLOADNFO="nfo"
 }}}
-The form input name which is used to submit the nfo. You can look at the page source and look at the `<input>` tag which is used for the torrent. This is usually something like `nfo` (TBDev) or `nfo_file_input` (Gazelle).
+The form input name which is used to submit the nfo. You can look at the page source and look at the `<input>` tag which is used for the torrent. This is usually something like `nfo` (TBDev) or `nfo_file_input` (Gazelle). If the site does not have a nfo input field you can just name this something random, it cannot be left empty.
 
 {{{
 UPLOADCAT="cat"
@@ -110,13 +110,14 @@ The form input name which is used to submit the category. You can look at the pa
 {{{
 UPLOADDESCR="descr"
 }}}
-The form input name which is used to submit the description. You can look at the page source and look at the `<input>` tag which is used for the description. This is usually something like `description` or `descr`.
+The form input name which is used to submit the description. You can look at the page source and look at the `<input>` tag which is used for the description. This is usually something like `description` or `descr`. If the site does not have a description input field you can just name this something random, it cannot be left empty.
 
 {{{
 UPLOADXTRA="-F 'submit=true' -F 'anonymous=on' -F 'auth=s0m34uthk3yf0rth3s1t3t00'"
 }}}
 here you can enter any other required (or optional) values that need to be posted. In Gazelle installations this is usually `submit=true` and possible `auth=authkey`. Some sites also have a checkbox fo anonoymous so something like `anonymous=on` could be used.
 These values should be added in the form of `-F 'name=value'`. Other possibilities are `-A 'Mozilla/4.0'` to specify a specific user agent string being sent to the server.
+More information about the possible options can be found on the [http://curl.haxx.se/docs/manpage.html curl man page].
 
 
 === path settings ===
