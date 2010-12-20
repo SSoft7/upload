@@ -57,6 +57,7 @@ It is recommended that you use `rtorrent_fast_resume.pl` with this script, howev
 {{{
 cd ~/
 wget http://libtorrent.rakshasa.no/downloads/rtorrent_fast_resume.pl
+chmod 755 rtorrent_fast_resume.pl
 }}}
 
 In order to use `rtorrent_fast_resume.pl` you need `Convert::Bencode` from CPAN. If you do not have this installed you can do so by executing the following command as *sudo* or *root* (so yes, this means that if you do not have this permission and are not able to ask someone to do this for you that you cannot use `rtorrent_fast_resume.pl`):
