@@ -8,7 +8,7 @@
 This page is pretty self-explanatory, here I will post the most frequently asked questions about the `upload` script. If you have any questions you can either contact me on IRC (I'm usually on `irc.p2p-network.net` as `ScarS` however you may find me on other networks under that nick as well), or you can leave a comment with a question.
 
 
-== Q and A ==
+== Questions and answers ==
 
 Here you will find the the questions and their answers:
 
