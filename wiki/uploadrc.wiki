@@ -29,7 +29,7 @@ The URL where the login form data should be posted to. For gazelle installations
 {{{
 LOGINTXT="<title>Login"
 }}}
-A _unique_ piece of text from the login page which will be used to see if we are still on the login page.
+A _unique_ piece of text from the page you get directed to after you have logged in which will be used to check if you are logged in. A possible value for this could be your username provided this is something unique and will be shown on the page you get directed to after you are logged in.
 
 {{{
 LOGINUSR="username"
