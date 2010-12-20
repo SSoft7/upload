@@ -59,16 +59,24 @@ torrent moved to torrent client watch dir.
 
 === WebUI screenshots ===
 
-The login page:
+On the list page you can see different colors for the release names, below are the colors and meanings described:
+|| *color* || *meaning* ||
+|| green || uploaded (sorted to the bottom) ||
+|| blue || uploading ||
+|| red || error (reason in between brackets) ||
+|| light/dark grey || hidden (sorted to the bottom) ||
+
+
+*The login page*:
 
 http://upload.googlecode.com/svn/wiki/images/login.png
 
 
-The light theme:
+*The light theme*:
 
 http://upload.googlecode.com/svn/wiki/images/light.png
 
 
-The dark theme:
+*The dark theme*:
 
 http://upload.googlecode.com/svn/wiki/images/dark.png
