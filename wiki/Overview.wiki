@@ -37,20 +37,20 @@ where `.abbr.rc` is the resource file for the specific site.
 Other possible options are described below:
 
 || *option* || *explanation* ||
-|| -c <category> || upload release to category `<category>` ||
-|| -d <path> || use `<path>` as your downloads/data directory ||
+|| -c `<category>` || upload release to category `<category>` ||
+|| -d `<path>` || use `<path>` as your downloads/data directory ||
 || -h || show the command information ||
 || -i || show extended command information ||
 || -l || show available categories ||
-|| -o <file> || output log of this upload to `<file>` ||
-|| -p <password> || use `<password>` to log in to the site ||
-|| -r <file> || use `<file>` as resource file ||
-|| -t <path> || use `<path>` as path to execute the script in ||
-|| -u <username> || use `<username>` to log in to the site ||
-|| -w <path> || use `<path>` as your torrents/watch directory ||
-|| -x <test> || execute `<test>` as test (possible values: cat, mkt, rfr) ||
-|| -y <number> || piece size to use (in 2^`<number>` bytes ||
-|| -z <number> || do NOT use `<number>` bytes as piece size ||
+|| -o `<file>` || output log of this upload to `<file>` ||
+|| -p `<password>` || use `<password>` to log in to the site ||
+|| -r `<file>` || use `<file>` as resource file ||
+|| -t `<path>` || use `<path>` as path to execute the script in ||
+|| -u `<username>` || use `<username>` to log in to the site ||
+|| -w `<path>` || use `<path>` as your torrents/watch directory ||
+|| -x `<test>` || execute `<test>` as test (possible values: cat, mkt, rfr) ||
+|| -y `<number>` || piece size to use (in 2^`<number>` bytes ||
+|| -z `<number>` || do NOT use `<number>` bytes as piece size ||
 
 
 == Output and screenshots ==
