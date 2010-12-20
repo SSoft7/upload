@@ -509,7 +509,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	disown %%
 
 	# search the site for the torrent
-	wget -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL\"$SEARCHNAME\""
+	wget -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL$SEARCHNAME"
 
 	# when done kill the dot function
 	kill $PROCESS
@@ -627,7 +627,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	disown %%
 
 	# search the site for the torrent
-	wget -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL\"$SEARCHNAME\""
+	wget -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL$SEARCHNAME"
 
 	# when done kill the dot function
 	kill $PROCESS
@@ -680,7 +680,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 		disown %%
 
 		# search the site for the torrent
-		wget -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL\"$SEARCHNAME\""
+		wget -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL$SEARCHNAME"
 
 		# when done kill the dot function
 		kill $PROCESS
