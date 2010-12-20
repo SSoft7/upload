@@ -8,7 +8,7 @@
 ##  created on: Sat Oct 31 2009                             ##
 ##                                                          ##
 ##  last modified by: ScarS                                 ##
-##  last modified on: Tue Dec 14 2010                       ##
+##  last modified on: Mon Dec 20 2010                       ##
 ##                                                          ##
 ##                                                          ##
 ##  script placement:                                       ##
@@ -80,7 +80,7 @@ done
 
 # if resource was not found in the current dir look in the uploader dir or home dir
 if [ ! -f "$RESOURCE" ]; then
-	if [ -f "$HOME/uploader/$RESOURCE" ]; then
+	if [ -f "$HOME/upload/$RESOURCE" ]; then
 		RESOURCE="$HOME/upload/$RESOURCE"
 	elif [ -f "$HOME/$RESOURCE" ]; then
 		RESOURCE="$HOME/$RESOURCE"
