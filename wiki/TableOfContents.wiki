@@ -36,6 +36,9 @@
     * [Configuration#The_WebUI The WebUI]
       * [Configuration#visudo visudo]
       * [webconfig settings.php]
+  * [FAQ FAQ]
+    * [FAQ#Introduction Introduction]
+    * [FAQ#Questions_and_answers Questions and answers]
 
 ----
 
