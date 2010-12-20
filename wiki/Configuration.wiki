@@ -51,6 +51,7 @@ In order to be able to use the webui the web user needs to be able to execute th
 
 In the webui directory there is only one file you need to edit which is the `settings.php` file. You can however if you want to add more .css files, this can be easily done by copying either the `light.css` or `dark.css` file and replacing the values.
 
+Users who want to use the WebUI also need to have matching `.abbreviation.rc` ((where `abbreviation` is the abbreviation of the site as it's used in `settings.php`) files in their `/home/user/upload/` directory so the script knows to which site it needs to upload.
 
 === visudo ===
 
