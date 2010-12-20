@@ -6,7 +6,7 @@
 
 Here you can find information on how to configure the `.upload.rc` type files. In the file itself there are already comments with an explanation what the setting is for, however I will explain them in a bit more detail where possible.
 
-It is recommended that if you use multiple sites to upload to you rename the `.upload.rc` file to `.abbreviation.rc`. This is also required if you want to use the WebUI.
+It is recommended that if you use multiple sites to upload to you rename the `.upload.rc` file to `.abbreviation.rc` (where `abbreviation` is the abbreviation of the site). This is also required if you want to use the WebUI.
 
 == The .upload.rc configuration ==
 
