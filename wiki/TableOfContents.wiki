@@ -9,7 +9,6 @@
     * [Overview#Output_and_screenshots Output and screenshots]
       * [Overview#Example_output Example output]
       * [Overview#WebUI_screenshots WebUI screenshots]
-      * []
   * [Installation Installation]
     * [Installation#Introduction Introduction]
     * [Installation#Requirements Requirements]
