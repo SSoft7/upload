@@ -72,7 +72,7 @@ UPLOADNFO="nfo"
 UPLOADCAT="cat"
 
 # upload form description: look for input NAME="description"
-UPLOADDESCR="descr"
+UPLOADDESC="descr"
 
 # upload form extras: look for other inputs with NAME and VALUE
 # and add to the list with: -F 'name=value'
