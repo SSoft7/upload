@@ -20,7 +20,7 @@ The `upload` script will walk through a couple steps when you execute it to uplo
   * moves the torrent to your watchdir
 
 
-== Output and Screenshots ==
+== Output and screenshots ==
 
 === Example output ===
 
