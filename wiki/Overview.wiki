@@ -13,6 +13,7 @@ The `upload` script will walk through a couple steps when you execute it to uplo
 
   * logs you in
   * checks for dupe, if found it downloads the torrent
+  * determines the optimal piece size to use
   * creates a torrent
   * checks for dupe again, if found it removes the created torrent and downloads the torrent
   * uploads the torrent
