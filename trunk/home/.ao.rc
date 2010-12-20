@@ -121,11 +121,11 @@ UPCHECK=1
 # list of categories able to be uploaded into: look for options after select NAME=category
 # if the option value is a number add it _after_ the category name
 ALLCATS=(
-	"Movies\|HD" 0 "Movies\|XviD" 1 "Movies\|DVDR" 2 "Movies\|Pack" 3 "Movies\|Pack-HD" 4 "Movies\|XXX" 5
-	"TV\|XviD" 6 "TV\|HD" 7 "TV\|DVDR" 8 "TV\|Pack" 9 "TV\|Pack-HD" 10
-	"Apps\|PC" 11 "Apps\|MAC" 12 "Apps\|Nix" 13 "Apps\|Mobile" 14
-	"Games\|PC" 15 "Games\|Xbox" 16 "Games\|PS3" 17 "Games\|Wii" 18
-	"E-Books" 19 "Misc." 20
+	"Movies\|HD" 1 "Movies\|XviD" 2 "Movies\|DVDR" 3 "Movies\|Pack" 4 "Movies\|Pack-HD" 5 "Movies\|XXX" 6
+	"TV\|XviD" 7 "TV\|HD" 8 "TV\|DVDR" 9 "TV\|Pack" 10 "TV\|Pack-HD" 11
+	"Apps\|PC" 12 "Apps\|MAC" 13 "Apps\|Nix" 14 "Apps\|Mobile" 15
+	"Games\|PC" 16 "Games\|Xbox" 17 "Games\|PS3" 18 "Games\|Wii" 19
+	"E-Books" 20 "Misc." 21
 )
 
 # is the option value different than the category name? 1 = yes, 0 = no
