@@ -18,8 +18,9 @@ PASSWORD="abcdefgijk"
 # website login URL
 LOGINURL="http://www.torrentsite.tld/login.php"
 
-# login page text: something _unique_ to check if we are on the login page
-LOGINTXT="<title>Login"
+# logged in text: something _unique_ to check if you are logged in
+# possibly your username if it's unique and on the page you get directed to after logging in
+LOGINTXT="user"
 
 # login form username: look for input NAME="username"
 LOGINUSR="username"
