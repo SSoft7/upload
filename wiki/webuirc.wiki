@@ -13,7 +13,7 @@ pass = abcdefg
 Here you have to set the password you will use to log in to the webui. Since this file is readable for other users it is recommended that you use a different password then you use in other places.
 
 {{{
-data = /home/someone/downloads/
+data = /home/user/downloads/
 }}}
 Here you have to set the path to your downloads/data directory, the contents of this directory will be listed in the webui and will be selectable for uploading.
 
