@@ -1,7 +1,7 @@
 #!/bin/bash
-HOME=/home/someone
+HOME=/home/user
 
-if [ $1 == "reset" ]; then
+if [ $1 == "reset" ] && [ -d "$2" ]; then
 	rm -rf "$2/.uploading"
 	rm -rf "$2/.uploaded"
 	rm -rf "$2/.uploaderror"
