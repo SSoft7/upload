@@ -32,7 +32,7 @@
         * [uploadrc#filter_settings filter settings]
       * [webuirc .webui.rc]
       * [Configuration#wrapper wrapper]
-    * [Configuration#rTorrent rTorrent]
+    * [Configuration#rTorrent_or_other_automation rTorrent or other automation]
     * [Configuration#The_WebUI The WebUI]
       * [Configuration#visudo visudo]
       * [webconfig settings.php]
