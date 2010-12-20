@@ -6,6 +6,7 @@
   * [Overview Overview]
     * [Overview#Introduction Introduction]
     * [Overview#The_upload_process The upload process]
+    * [Overview#Usage Usage]
     * [Overview#Output_and_screenshots Output and screenshots]
       * [Overview#Example_output Example output]
       * [Overview#WebUI_screenshots WebUI screenshots]
