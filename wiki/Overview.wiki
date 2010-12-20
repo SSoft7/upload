@@ -101,9 +101,9 @@ On the list page you can see different colors for the release names, below are t
 
 
 There are 3 dropdown boxes behind each release, below are is the reason for each described:
-  # piece size - The script will determine the optimal piece size by default, however if you wish to change the piece size (i.e. to avoid dupe hash) you can choose one yourself here.
-  # site - here you can select to which site you want to upload
-  # category - after you selected which site you want to upload to you can select to which category you want to upload
+  # `piece size`: The script will determine the optimal piece size by default, however if you wish to change the piece size (i.e. to avoid dupe hash) you can choose one yourself here.
+  # `site`: here you can select to which site you want to upload
+  # `category`: after you selected which site you want to upload to you can select to which category you want to upload
 
 
 *The login page*:
