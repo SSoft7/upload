@@ -20,13 +20,13 @@ More information about how to use the script can be found on the [Overview#Usage
 
 === Do I need root or sudo privileges to use the uploader? ===
 
-No, you do not need root or sudo privileges. If you don't have these you should install the script and other needed binaries into your local bin (`~/bin`) directory.
+No, you do not need root or sudo privileges. If you don't have these you should install the script and other needed binaries into your local `/bin` directory.
 If you do not have sudo or root privileges you cannot use `rtorrent_fast_resume.pl` (unless `Convert::Bencode` is installed) or use the WebUI though.
 
 
 === Is rTorrent required to use this script? ===
 
-No, rTorrent is not required, you could also use some other `*`nix torrent client which supports loading files from a torrents/watch directory. If you do not use rTorrent you cannot use `rtorrent_fast_resume.pl` though, however that client may have an alternative way of dealing with this.
+No, `rtorrent` is not required, you could also use some other `*`nix torrent client which supports loading files from a torrents/watch directory. If you do not use `rtorrent` you cannot use `rtorrent_fast_resume.pl` though, however that client may have an alternative way of dealing with skipping a hashcheck.
 
 
 === Could you add a default resource file for my site? ===
