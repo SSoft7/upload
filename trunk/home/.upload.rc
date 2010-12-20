@@ -6,10 +6,6 @@
 ##      save in ~/.upload.rc      ##
 ##  chmod 700 to restrict access  ##
 ####################################
-##         SETTINGS START         ##
-####################################
-
-####################################
 ##         LOGIN SETTINGS         ##
 ####################################
 
@@ -134,15 +130,9 @@ ALLCATS=(
 # is the option value different than the category name? 1 = yes, 0 = no
 KEYVAL=0
 
-# test value: testing will not upload the file to the site
-# "cat" to test categories, "mkt" to test mktorrent, "rfr" to test rtorrent_fast_resume.pl
-TEST=""
-
 
 ####################################
-##          SETTINGS END          ##
-####################################
-##         FILTERS START          ##
+##        FILTERS SETTING         ##
 ##                                ##
 ## - FILTERS : case insensitive   ##
 ## - EXCEPTS : case insensitive   ##
@@ -199,5 +189,5 @@ CATS[n]="Movies/XviD"
 let n+=1
 
 ##################################
-##          FILTERS END         ##
+##         SETTINGS END         ##
 ##################################

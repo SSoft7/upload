@@ -2,7 +2,7 @@
 pass = abcdefg
 
 # path to downloads dir: required
-data = /home/someone/downloads/
+data = /home/user/downloads/
 
 # default directory sorting type: latest / alphabetically
 datasort = latest

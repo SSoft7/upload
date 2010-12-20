@@ -44,17 +44,25 @@ $_settings = array(
     )
 );
 
+// add trailing to homedir slash if needed
+if (substr($homedir, -1) != "/")
+    $homedir .= "/";
+
 // function to parse the user webui file
 function parse_settings($user) {
-    global $users, $_settings;
-    $settings = array();
+    global $homedir, $_settings;
+    $settings = array("uploader" => $homedir . $user . "/upload/");
+
+    // check if user uploader dir exists
+    if (!is_dir($settings["uploader"]))
+       return false;
 
     // check if the user's webui file exists and is readable
-    if (!@file_exists($users[$user]["uploader"] . ".webui.rc") || !@is_readable($users[$user]["uploader"] . ".webui.rc"))
+    if (!file_exists($settings["uploader"] . ".webui.rc") || !is_readable($settings["uploader"] . ".webui.rc"))
         return false;
 
     // read the file into an array
-    $lines = file($users[$user]["uploader"] . ".webui.rc", FILE_SKIP_EMPTY_LINES);
+    $lines = file($settings["uploader"] . ".webui.rc", FILE_SKIP_EMPTY_LINES);
     if (!is_array($lines) || empty($lines))
         return false;
 
@@ -85,7 +93,7 @@ function parse_settings($user) {
     if (!strpos($settings["data"], $user))
         return false;
 
-    // add trailing slash to data dir if needed
+    // add trailing slash if needed
     if (substr($settings["data"], -1) != "/")
         $settings["data"] .= "/";
 
@@ -144,30 +152,23 @@ if ($_GET["action"] == "logout") {
 }
 
 // check for valid session variables to authenticate with
-if (!empty($_SESSION["user"]) && !empty($_SESSION["pass"]) && array_key_exists($_SESSION["user"], $users)) {
-    // get user settings
-    $settings = parse_settings($_SESSION["user"]);
-
+if (!empty($_SESSION["user"]) && !empty($_SESSION["pass"]) && ($settings = parse_settings($_SESSION["user"])) !== false) {
     // check if session password is correct, if not clear the session variables
-    if ($settings !== false && $_SESSION["pass"] == sha1($settings["pass"]))
-        $user = array_merge($users[$_SESSION["user"]], $settings);
+    if ($_SESSION["pass"] == sha1($settings["pass"]))
+        $user = $settings;
     else
         unset($_SESSION["user"], $_SESSION["pass"]);
-
 // if invalid session variables exist clear them
 } elseif (!empty($_SESSION["user"]) || !empty($_SESSION["user"]))
     unset($_SESSION["user"], $_SESSION["pass"]);
 
 // if no valid session has been found check for valid cookie variables to authenticate with
-if ($user === null && !empty($_COOKIE["user"]) && !empty($_COOKIE["pass"]) && array_key_exists($_COOKIE["user"], $users)) {
-    // get user settings
-    $settings = parse_settings($_COOKIE["user"]);
-
+if ($user === null && !empty($_COOKIE["user"]) && !empty($_COOKIE["pass"]) && ($settings = parse_settings($_COOKIE["user"])) !== false) {
     // check if cookie password is correct, if not clear the cookie variables
-    if ($settings !== false && $_COOKIE["pass"] == sha1($settings["pass"])) {
-        $user = array_merge($users[$_COOKIE["user"]], $settings);
+    if ($_COOKIE["pass"] == sha1($settings["pass"])) {
         $_SESSION["user"] = $_COOKIE["user"];
         $_SESSION["pass"] = $_COOKIE["pass"];
+        $user = $settings;
     } else {
         setcookie("user", null, time() - 3600);
         setcookie("pass", null, time() - 3600);
@@ -185,15 +186,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // when not logged in check for login action
     if ($user === null) {
         // check if the user exists
-        if (!empty($_POST["username"]) && array_key_exists($_POST["username"], $users)) {
-            // get user settings
-            $settings = parse_settings($_POST["username"]);
-
+        if (!empty($_POST["username"]) && ($settings = parse_settings($_POST["username"])) !== false) {
             // check if the posted password is correct
-            if ($settings !== false && $_POST["password"] == $settings["pass"]) {
-                $user = array_merge($users[$_POST["username"]], $settings);
+            if ($_POST["password"] == $settings["pass"]) {
                 $_SESSION["user"] = $_POST["username"];
                 $_SESSION["pass"] = sha1($_POST["password"]);
+                $user = $settings;
 
                 // if the user wants to stay logged in set the cookies
                 if ($_POST["remember"]) {
@@ -227,7 +225,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // check if the command succeeded
                 if ($ret)
-                    $errors[] = "reset command failed. check if <strong>" . $user["uploader"] . "upload</strong> and <strong>/etc/sudoers</strong> have the correct information";
+                    $errors[] = "reset command failed. check if <strong>" . $user["uploader"] . "wrapper</strong> and <strong>/etc/sudoers</strong> have the correct information";
                 else
                     header("Location: " . str_replace("index.php", "", $_SERVER["PHP_SELF"]));
             }
@@ -244,7 +242,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // check if the command succeeded
                 if ($ret)
-                    $errors[] = "hide command failed. check if <strong>" . $user["uploader"] . "upload</strong> and <strong>/etc/sudoers</strong> have the correct information";
+                    $errors[] = "hide command failed. check if <strong>" . $user["uploader"] . "wrapper</strong> and <strong>/etc/sudoers</strong> have the correct information";
                 else
                     header("Location: " . str_replace("index.php", "", $_SERVER["PHP_SELF"]));
             }
@@ -279,7 +277,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     // check if the command succeeded
                     if ($ret)
-                        $errors[] = "upload command failed. check if <strong>" . $user["uploader"] . "upload</strong> and <strong>/etc/sudoers</strong> have the correct information";
+                        $errors[] = "upload command failed. check if <strong>" . $user["uploader"] . "wrapper</strong> and <strong>/etc/sudoers</strong> have the correct information";
                     else
                         header("Location: " . str_replace("index.php", "", $_SERVER["PHP_SELF"]));
                 }

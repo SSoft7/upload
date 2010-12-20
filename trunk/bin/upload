@@ -66,11 +66,8 @@ echo "torrent upload script v$VERSION by ScarS"
 # enable case-insensitive matching
 shopt -s nocaseglob
 
-# get script name
-SNAME=`basename "$0"`
-
 # set default resource file
-RESOURCE=".$SNAME.rc"
+RESOURCE=".upload.rc"
 
 # check for resource file first because some settings are used to check options
 while getopts ":r:" opt; do
