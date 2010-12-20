@@ -1,0 +1,74 @@
+#labels Featured
+= Overview =
+
+<wiki:toc />
+
+== Introduction ==
+
+Here you can find information about the functionalities of the script, example output and WebUI screenshots. If you want information on how to install the script you can look on the [Installation install] page and for configuration you can look at the [Configuration configuration] page.
+
+== The upload process ==
+
+The `upload` script will walk through a couple steps when you execute it to upload a torrent, below are the steps described:
+
+  * logs you in
+  * checks for dupe, if found it downloads the torrent
+  * creates a torrent
+  * checks for dupe again, if found it removes the created torrent and downloads the torrent
+  * uploads the torrent
+  * runs `rtorrent_fast_resume`
+  * moves the torrent to your watchdir
+
+
+== Output and Screenshots ==
+
+=== Example output ===
+
+Here is an example of the output the script would give when you would execute it manually:
+{{{
+user@host:~$ upload -c "tv/xvid" downloads/Some.TV.Show.Release.S01E01.HDTV.XviD-GRP/
+torrent upload script v0.9.1 by ScarS
+
+logging in . . . . . logged in
+
+checking for dupe . . . . no dupe found
+
+mktorrent 1.0 (c) 2007, 2009 Emil Renner Berthing
+
+Hashing grp-stsr.0101.hdtv.nfo.
+Hashing grp-stsr.0101.hdtv.r00.
+Hashing grp-stsr.0101.hdtv.r01.
+Hashing grp-stsr.0101.hdtv.r02.
+Hashing grp-stsr.0101.hdtv.r03.
+Hashing grp-stsr.0101.hdtv.r04.
+Hashing grp-stsr.0101.hdtv.r05.
+Hashing grp-stsr.0101.hdtv.r06.
+Hashing grp-stsr.0101.hdtv.rar.
+Writing metainfo file... done.
+
+checking for dupe . . . no dupe found
+
+uploading torrent . . . . . upload complete
+
+Multi file torrent: Some.TV.Show.Release.S01E01.HDTV.XviD-GRP
+Total size: 86340942 bytes; 173 chunks; 9 files.
+
+torrent moved to torrent client watch dir.
+}}}
+
+
+=== WebUI screenshots ===
+
+The login page:
+
+http://upload.googlecode.com/svn/wiki/images/login.png
+
+
+The light theme:
+
+http://upload.googlecode.com/svn/wiki/images/light.png
+
+
+The dark theme:
+
+http://upload.googlecode.com/svn/wiki/images/dark.png
