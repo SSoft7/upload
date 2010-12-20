@@ -486,7 +486,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	LOGINCHECK=`grep "$LOGINTXT" login$TMP.tmp`
 
 	# if you are not logged in stop the auto upload
-	if [ -n "$LOGINCHECK" ]; then
+	if [ ! -n "$LOGINCHECK" ]; then
 		echo -e "\b failed\n\nerror: it appears you could not be logged in. check username, password and website url."
 		echo "### error: it appears you could not be logged in" >> $LOGFILE
 		echo "### auto upload stopped at: `date`" >> $LOGFILE
@@ -636,7 +636,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	LOGINCHECK=`grep "$LOGINTXT" dupecheck$TMP.tmp`
 
 	# if you are not logged in try to log in again
-	if [ -n "$LOGINCHECK" ]; then
+	if [ ! -n "$LOGINCHECK" ]; then
 		echo -en " failed to log in\n\nlogging in . . ."
 
 		# start dot function
@@ -658,7 +658,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 		LOGINCHECK=`grep "$LOGINTXT" login$TMP.tmp`
 
 		# if you are not logged in stop the auto upload
-		if [ -n "$LOGINCHECK" ]; then
+		if [ ! -n "$LOGINCHECK" ]; then
 			echo -e "\bfailed\n\nerror: it appears you could not be logged in - torrent saved: \`$TMPPATH$NAME.torrent'."
 			echo "### error: it appears you could not be logged in - torrent saved: $TMPPATH$NAME.torrent" >> $LOGFILE
 			echo "### auto upload stopped at: `date`" >> $LOGFILE
