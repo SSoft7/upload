@@ -94,10 +94,10 @@ torrent moved to torrent client watch dir.
 
 On the list page you can see different colors for the release names, below are the colors and meanings described:
 || *color* || *meaning* ||
-|| green || uploaded (sorted to the bottom) ||
-|| blue || uploading ||
-|| red || error (reason in between brackets) ||
-|| light/dark grey || hidden (sorted to the bottom) ||
+|| <font color="green">green</font> || uploaded (sorted to the bottom) ||
+|| <font color="blue">blue</font> || uploading ||
+|| <font color="red">red</font> || error (reason in between brackets) ||
+|| <font color="grey">light/dark grey</font> || hidden (sorted to the bottom) ||
 
 
 There are 3 dropdown boxes behind each release, below are is the reason for each described:
