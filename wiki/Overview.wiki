@@ -33,7 +33,7 @@ or if you use multiple sites:
 {{{
 upload -s abbr -c "category" /path/to/release/
 }}}
-where `abbr` is the *case-sensitive* abbreviation which is used for the resource file for the specific site and `category`is the _case-insensitive_ category you want to upload into.
+where `abbr` is the *case-sensitive* abbreviation which is used for the resource file for the specific site and `category` is the _case-insensitive_ category you want to upload into.
 
 Other possible options are described below:
 
