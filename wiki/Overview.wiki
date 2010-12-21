@@ -27,12 +27,13 @@ The most common usage when only using the `.upload.rc` file for a single site is
 {{{
 upload -c "category" /path/to/release/
 }}}
+where `category` is the _case-insensitive_ category you want to upload into.
 
 or if you use multiple sites:
 {{{
-upload -r .abbr.rc -c "category" /path/to/release/
+upload -s abbr -c "category" /path/to/release/
 }}}
-where `.abbr.rc` is the resource file for the specific site.
+where `abbr` is the *case-sensitive* abbreviation which is used for the resource file for the specific site and `category`is the _case-insensitive_ category you want to upload into.
 
 Other possible options are described below:
 
@@ -45,6 +46,7 @@ Other possible options are described below:
 || -o `<file>` || output log of this upload to `<file>` ||
 || -p `<password>` || use `<password>` to log in to the site ||
 || -r `<file>` || use `<file>` as resource file ||
+|| -s `<site>` || use `<file>` as resource file ||
 || -t `<path>` || use `<path>` as path to execute the script in ||
 || -u `<username>` || use `<username>` to log in to the site ||
 || -w `<path>` || use `<path>` as your torrents/watch directory ||
