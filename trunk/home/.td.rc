@@ -16,7 +16,7 @@ USERNAME="user"
 PASSWORD="abcdefgijk"
 
 # website login URL
-LOGINURL="http://www.torrentsite.tld/login.php"
+LOGINURL="http://www.t-d.net/login.php"
 
 # logged in text: something _unique_ to check if you are logged in
 # possibly your username if it's unique and on the page you get directed to after logging in
@@ -34,17 +34,17 @@ LOGINPWD="password"
 ####################################
 
 # website search URL
-SEARCHURL="http://www.torrentsite.tld/torrents.php?search="
+SEARCHURL="http://www.t-d.net/torrents.php?torrentname="
 
 # search no result text: something _unique_ to check if no results are found
-SEARCHTXT="No results found"
+SEARCHTXT="No Results Found!"
 
 # download dupe: 1 = yes, 0 = no
 # note: only possible if download link is on the torrents page
 DUPEDL=0
 
 # URL that needs to be prepended to the download URL
-DUPEURL="http://www.torrentsite.tld/"
+DUPEURL="http://www.t-d.net/"
 
 # search download link text:  something _unique_ to find the exact line
 DUPETXT="action=download"
@@ -58,26 +58,26 @@ DUPECMD="cut -d \" -f 2"
 ####################################
 
 # website upload URL
-UPLOADURL="http://www.torrent-site.tld/upload.php"
+UPLOADURL="https://www.t-d.net/upload.php"
 
 # your personal announce URL
-ANNOUNCEURL="http://tracker.torrent-site.tld/s0m3p4ssk4yf0rth3s1t3/announce"
+ANNOUNCEURL="http://tracker.t-d.net/s0m3p4ssk4yf0rth3s1t3/announce"
 
 # upload form torrent: look for input NAME="torrent"
-UPLOADTOR="torrent"
+UPLOADTOR="file_input"
 
 # upload form nfo: look for input NAME="nfo"
-UPLOADNFO="nfo"
+UPLOADNFO="nfo_file_input"
 
 # upload form category: look for select NAME="category"
-UPLOADCAT="cat"
+UPLOADCAT="type"
 
 # upload form description: look for input NAME="description"
-UPLOADDESC="descr"
+UPLOADDESC="desc"
 
 # upload form extras: look for other inputs with NAME and VALUE
 # and add to the list with: -F 'name=value'
-UPLOADXTRA="-F 'submit=true' -F 'anonymous=on' -F 'auth=s0m34uthk3yf0rth3s1t3t00'"
+UPLOADXTRA="-F 'submit=true' 'anonymous=on'"
 
 
 ####################################
@@ -112,10 +112,10 @@ RFR="/home/user/rtorrent_fast_resume.pl"
 ####################################
 
 # string used to identify as a specific user-agent
-USERAGENT="Mozilla/4.0"
+USERAGENT="TD/1.0"
 
 # text to prepend on the torrent file before moving it to your torrents dir
-PREPEND="au."
+PREPEND="td."
 
 # check for already uploading: use with UPCHECK - 1 = yes, 0 = no
 # you only need to disable this if you expect to upload the same torrent multiple times at the same time
@@ -124,11 +124,13 @@ UPCHECK=1
 # list of categories able to be uploaded into: look for options after select NAME=category
 # if the option value is a number add it _after_ the category name
 ALLCATS=(
-	"TV/XviD" "TV/HD" "TV/Pack"
-	"Movies/XviD" "Movies/DVDR" "Movies/BluRay" "Movie/Pack" "XXX/XviD"
-	"Games/PC" "Games/Xbox" "Games/PSX" "Games/Wii" "Games/Misc" "Games/Pack"
-	"Music/MP3" "Music/FLAC" "Music/Video" "Music/Misc" "Music/Pack"
-	"0day" "Ebook" "Misc"
+	"Anime/Hentai" "Anime/Manga" "Anime/Toon"
+	"Appz/Mac" "Appz/Misc" "Appz/PC DOX" "Appz/PC ISO"
+	"Games/Handheld" "Games/PC DOX" "Games/PC ISO" "Games/PC Rip" "Games/PSX" "Games/WII" "Games/XBOX"
+	"Movies/DVD" "Movies/HD" "Movies/MP4" "Movies/XviD"
+	"Music/CD" "Music/Single" "Music/Video"
+	"TV/DVD" "TV/HD" "TV/XviD"
+	"XXX/DVD" "XXX/HD" "XXX/XviD"
 )
 
 # is the option value different than the category name? 1 = yes, 0 = no
