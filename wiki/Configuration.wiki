@@ -42,7 +42,8 @@ If you have the `upload` and `uploadwrap` script installed and configured your `
 {{{
 system.method.set_key = event.download.finished,upload_torrent,"execute=uploadwrap,$d.get_chunk_size=,$d.get_base_path="
 }}}
-This will call the `uploadwrap` file which in turn executes the `upload` script. It will do this without specifying a category to upload in so you need to set up filters in your `.upload.rc`.
+This will call the `uploadwrap` file which in turn executes the `upload` script.
+
 
 Currently the `uploadwrap` file has only a single line in it:
 {{{
@@ -52,8 +53,9 @@ In this case it will take the default `.upload.rc` file to use as resource. If y
 {{{
 upload -s abbr -z "$1" "$2" >/dev/null 2>&1 &
 }}}
-where abbr is the case-sensitive abbreviation which is used for the resource file for the specific site (i.e. `.abbr.rc).
+where abbr is the case-sensitive abbreviation which is used for the resource file for the specific site (i.e. `.abbr.rc`).If you want you could add several of these lines to automate the uploading to several sites.
 
+The call to the `upload` script is without specifying a category to upload in, so you need to set up filters in your `.upload.rc`.
 
 == The WebUI ==
 
