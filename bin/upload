@@ -2,13 +2,13 @@
 
 ##############################################################
 ##                                                          ##
-##  ScarS' torrent upload script v0.9.1                     ##
+##  ScarS' torrent upload script v0.9.2                     ##
 ##                                                          ##
 ##  created by: ScarS                                       ##
 ##  created on: Sat Oct 31 2009                             ##
 ##                                                          ##
 ##  last modified by: ScarS                                 ##
-##  last modified on: Mon Dec 20 2010                       ##
+##  last modified on: Tue Dec 21 2010                       ##
 ##                                                          ##
 ##                                                          ##
 ##  script placement:                                       ##
@@ -26,6 +26,7 @@
 ##  -o <file>      : log output to file                     ##
 ##  -p <password>  : password                               ##
 ##  -r <file>      : load resource file                     ##
+##  -s <site>      : load .site.rc                          ##
 ##  -t <path>      : path to temp dir to create torrent     ##
 ##  -u <username>  : username                               ##
 ##  -w <path>      : path to torrentclient watch directory  ##
@@ -35,7 +36,7 @@
 ##                                                          ##
 ##  requires:                                               ##
 ##  - bash v3.2+ [ run `bash --version' to check ]          ##
-##  - curl [ run `aptitude install curl' to install ]       ##
+##  - curl [ run `apt-get install curl' to install ]        ##
 ##  - mktorrent v0.6+ [ http://mktorrent.sourceforge.net/ ] ##
 ##  - ~/.upload.rc [ http://tinyurl.com/uploadrc ]          ##
 ##                                                          ##
@@ -70,11 +71,14 @@ shopt -s nocaseglob
 RESOURCE=".upload.rc"
 
 # check for resource file first because some settings are used to check options
-while getopts ":r:" opt; do
+while getopts ":r:s:" opt; do
 	case "$opt" in
 	# option r: load resource file
 	r )
 		RESOURCE=$OPTARG;;
+	# option s: load .site.rc
+	s )
+		RESOURCE=".$OPTARG.rc";;
 	esac
 done
 
@@ -102,7 +106,7 @@ source "$RESOURCE"
 # reset options to walk them again
 OPTIND=1
 
-while getopts ":c:d:hilo:p:r:t:u:w:x:y:z:" opt; do
+while getopts ":c:d:hilo:p:r:s:t:u:w:x:y:z:" opt; do
 	case "$opt" in
 	# option c: set a category
 	c )
@@ -157,6 +161,7 @@ options:
 -o <file>      : log output to file
 -p <password>  : password
 -r <file>      : load resource file
+-s <site>      : load .site.rc
 -t <path>      : path to temp dir to create torrent
 -u <username>  : username
 -w <path>      : path to torrentclient watch directory
@@ -181,6 +186,7 @@ options:
 -o <file>      : log output to file
 -p <password>  : password
 -r <file>      : load resource file
+-s <site>      : load .site.rc
 -t <path>      : path to temp dir to create torrent
 -u <username>  : username
 -w <path>      : path to torrentclient watch directory
@@ -190,7 +196,7 @@ options:
 
 requires:
 - bash v3.2+ [ run \`bash --version' to check ]
-- curl [ run \`aptitude install curl' to install ]
+- curl [ run \`apt-get install curl' to install ]
 - mktorrent v0.6+ [ http://mktorrent.sourceforge.net/ ]
 - ~/.upload.rc [ http://tinyurl.com/uploadrc ]
 
@@ -231,6 +237,8 @@ EOF
 	p ) PASSWORD=$OPTARG;;
 	# option r: previously handled, do nothing
 	r ) continue;;
+	# option s: previously handled, do nothing
+	s ) continue;;
 	# option t: set path to temp dir
 	t ) TMPPATH=$OPTARG;;
 	# option u: set username
@@ -477,7 +485,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	disown %%
 
 	# log in to the site
-	wget -q --no-check-certificate -O login$TMP.tmp --save-cookies cookies$TMP.tmp --keep-session-cookies --post-data "$LOGINUSR=$USERNAME&$LOGINPWD=$PASSWORD" "$LOGINURL"
+	wget -U "$USERAGENT" -q --no-check-certificate -O login$TMP.tmp --save-cookies cookies$TMP.tmp --keep-session-cookies --post-data "$LOGINUSR=$USERNAME&$LOGINPWD=$PASSWORD" "$LOGINURL"
 
 	# when done kill dot function
 	kill $PROCESS
@@ -509,7 +517,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	disown %%
 
 	# search the site for the torrent
-	wget -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL$SEARCHNAME"
+	wget -U "$USERAGENT" -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL$SEARCHNAME"
 
 	# when done kill the dot function
 	kill $PROCESS
@@ -530,7 +538,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 
 			# download torrent
 			echo -e "\ndownloading: $DUPEURL$DLPAGE"
-			wget -q --no-check-certificate -O "$NAME.torrent" --load-cookies cookies$TMP.tmp "$DUPEURL$DLPAGE"
+			wget -U "$USERAGENT" -q --no-check-certificate -O "$NAME.torrent" --load-cookies cookies$TMP.tmp "$DUPEURL$DLPAGE"
 			echo "### downloaded: $DUPEURL$DLPAGE" >> $LOGFILE
 
 			# check if rtorrent_fast_resume.pl needs to be done
@@ -627,7 +635,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	disown %%
 
 	# search the site for the torrent
-	wget -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL$SEARCHNAME"
+	wget -U "$USERAGENT" -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL$SEARCHNAME"
 
 	# when done kill the dot function
 	kill $PROCESS
@@ -649,7 +657,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 		disown %%
 
 		# log in again
-		wget -q --no-check-certificate -O login$TMP.tmp --save-cookies cookies$TMP.tmp --keep-session-cookies --post-data "$LOGINUSR=$USERNAME&$LOGINPWD=$PASSWORD" "$LOGINURL"
+		wget -U "$USERAGENT" -q --no-check-certificate -O login$TMP.tmp --save-cookies cookies$TMP.tmp --keep-session-cookies --post-data "$LOGINUSR=$USERNAME&$LOGINPWD=$PASSWORD" "$LOGINURL"
 
 		# when done kill the function
 		kill $PROCESS
@@ -680,7 +688,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 		disown %%
 
 		# search the site for the torrent
-		wget -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL$SEARCHNAME"
+		wget -U "$USERAGENT" -q --no-check-certificate -O dupecheck$TMP.tmp --load-cookies cookies$TMP.tmp "$SEARCHURL$SEARCHNAME"
 
 		# when done kill the dot function
 		kill $PROCESS
@@ -702,7 +710,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 
 			# download torrent
 			echo -e "\ndownloading: $DUPEURL$DLPAGE"
-			wget -q --no-check-certificate -O "$NAME.torrent" --load-cookies cookies$TMP.tmp "$DUPEURL$DLPAGE"
+			wget -U "$USERAGENT" -q --no-check-certificate -O "$NAME.torrent" --load-cookies cookies$TMP.tmp "$DUPEURL$DLPAGE"
 			echo "### downloaded: $DUPEURL$DLPAGE" >> $LOGFILE
 
 			# check if rtorrent_fast_resume.pl needs to be done
@@ -763,7 +771,7 @@ if [[ ! $TEST =~ mkt ]] && [[ ! $TEST =~ rfr ]]; then
 	disown %%
 
 	# prepare the upload command
-	UPLOADCMD="'$CURL' -s -k -o upload$TMP.tmp -b cookies$TMP.tmp -H 'Expect:' -F '$UPLOADCAT=$CAT' -F '$UPLOADTOR=@$NAME.torrent' -F '$UPLOADNFO=@$NFO' -F '$UPLOADDESC=<$NFO' $UPLOADXTRA '$UPLOADURL'"
+	UPLOADCMD="'$CURL' -s -k -o upload$TMP.tmp -b cookies$TMP.tmp -A '$USERAGENT' -H 'Expect:' -F '$UPLOADCAT=$CAT' -F '$UPLOADTOR=@$NAME.torrent' -F '$UPLOADNFO=@$NFO' -F '$UPLOADDESC=<$NFO' $UPLOADXTRA '$UPLOADURL'"
 
 	# execute the upload command (need to use eval for $UPLOADXTRA)
 	eval $UPLOADCMD

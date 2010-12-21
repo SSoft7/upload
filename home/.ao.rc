@@ -95,7 +95,7 @@ TORRENTS="/home/user/torrents/"
 TMPPATH="/tmp/"
 
 # path to your log file: set to /dev/null to disable logging
-LOGFILE="/home/user/upload.log"
+LOGFILE="/home/user/upload/upload.log"
 
 # path to curl: if in $PATH just enter curl
 CURL="curl"
@@ -110,6 +110,9 @@ RFR="/home/user/rtorrent_fast_resume.pl"
 ####################################
 ##       ADVANCED SETTINGS        ##
 ####################################
+
+# string used to identify as a specific user-agent
+USERAGENT="Mozilla/4.0"
 
 # text to prepend on the torrent file before moving it to your torrents dir
 PREPEND="ao."
@@ -129,7 +132,7 @@ ALLCATS=(
 )
 
 # is the option value different than the category name? 1 = yes, 0 = no
-KEYVAL=0
+KEYVAL=1
 
 
 ####################################
