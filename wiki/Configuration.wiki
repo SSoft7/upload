@@ -48,11 +48,11 @@ Currently the `uploadwrap` file has only a single line in it:
 {{{
 upload -z "$1" "$2" >/dev/null 2>&1 &
 }}}
-In this case it will take the default `.upload.rc` file to use as resource. If you want to change this you can easily add the `-r <file>` option:
+In this case it will take the default `.upload.rc` file to use as resource. If you want to change this you can easily add the `-s <site>` option:
 {{{
-upload -r .abbr.rc -z "$1" "$2" >/dev/null 2>&1 &
+upload -s abbr -z "$1" "$2" >/dev/null 2>&1 &
 }}}
-so it will load the `.abbr.rc` resource file instead.
+where abbr is the case-sensitive abbreviation which is used for the resource file for the specific site (i.e. `.abbr.rc).
 
 
 == The WebUI ==
