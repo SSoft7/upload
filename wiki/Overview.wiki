@@ -51,8 +51,8 @@ Other possible options are described below:
 || -u `<username>` || use `<username>` to log in to the site ||
 || -w `<path>` || use `<path>` as your torrents/watch directory ||
 || -x `<test>` || execute `<test>` as test (possible values: cat, mkt, rfr) ||
-|| -y `<number>` || piece size to use (in `2^<number>` bytes) ||
-|| -z `<number>` || do NOT use `<number>` bytes as piece size ||
+|| -y `<number>` || piece size to use (in `2^<number>` bytes, minimum: 15, maximum: 28) ||
+|| -z `<number>` || do NOT use `<number>` bytes as piece size (minimum: 32768, maximum: 268435456) ||
 
 
 == Output and screenshots ==
