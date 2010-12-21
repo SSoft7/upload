@@ -5,7 +5,7 @@
 
 == Introduction ==
 
-Here you can find information on how to configure the upload script files. If you want to know more about the functionalities of the script you can look on the [/Overview overview] page.
+Here you can find information on how to configure the upload script files. If you want to know more about the functionalities of the script you can look on the [Overview overview] page.
 
 
 == The home directory ==
