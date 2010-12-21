@@ -12,6 +12,7 @@ Here you can find information on how to install the upload script. If you want t
 
 To be able to use the upload script there are some other programs required, here is a list of the required programs:
 
+
 === bash ===
 
 For the upload script you are required to use `bash` *version 3.2 or higher*. You can check your `bash` version with the following command:
@@ -24,7 +25,9 @@ apt-get update
 apt-get upgrade
 }}}
 
+
 === curl ===
+
 You can check if you have `curl` installed with the following command:
 {{{
 which curl
@@ -35,8 +38,10 @@ apt-get install curl
 }}}
 More information about `curl` can be found on the [http://curl.haxx.se/ curl website] and information about compiling it manually can be found on the [http://curl.haxx.se/docs/install.html curl install page].
 
+
 === mktorrent ===
-You can check if you have `mktorrent` installed with the following command:
+
+For the upload script you are required to use `mktorrent` *version 0.6 or higher*. You can check if you have `mktorrent` installed with the following command:
 {{{
 which mktorrent
 }}}
@@ -51,7 +56,9 @@ make install
 }}}
 The `make install` command should be executed as *root* or *sudo*, if you do not have this privilege you can also move the `mktorrent` file which has been created in the `mktorrent-1.0/` dir to your local `/bin` dir. More information about your local `/bin` dir can be found in [Installation#The_bin_directory upload the bin directory] part of this wiki page.
 
+
 === rtorrent_fast_resume.pl ===
+
 It is recommended that you use `rtorrent_fast_resume.pl` with this script, however this is *not required*, and if you do not have *root* or *sudo* you might not be able to use it. The reason it is recommended is because it will allow you to skip the initial hash check when the torrent gets added to `rtorrent`. As you are the person who created the torrent you can be certain that you have the files from the torrent 100% complete.
 `rtorrent_fast_resume.pl` can be downloaded from the [http://libtorrent.rakshasa.no/ libtorrent] page. To download the script to your home directory you can execute the following command:
 {{{
@@ -78,9 +85,9 @@ svn checkout http://upload.googlecode.com/svn/trunk/bin uploadbin
 
 or download the tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
-wget http://upload.googlecode.com/files/bin-v0.9.1.tar.gz
-tar -zxf bin-v0.9.1.tar.gz
-rm bin-v0.9.1.tar.gz
+wget http://upload.googlecode.com/files/bin-v0.9.2.tar.gz
+tar -zxf bin-v0.9.2.tar.gz
+rm bin-v0.9.2.tar.gz
 }}}
 
 Now make the files executable:
@@ -125,9 +132,9 @@ svn checkout http://upload.googlecode.com/svn/trunk/home upload
 
 or download the tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
-wget http://upload.googlecode.com/files/home-v0.9.1.tar.gz
-tar -zxf home-v0.9.1.tar.gz
-rm home-v0.9.1.tar.gz
+wget http://upload.googlecode.com/files/home-v0.9.2.tar.gz
+tar -zxf home-v0.9.2.tar.gz
+rm home-v0.9.2.tar.gz
 }}}
 
 For security make sure you modify the upload resource files so you are the only one being able to access them:
@@ -162,9 +169,9 @@ svn checkout http://upload.googlecode.com/svn/trunk/web uploader
 
 or download the tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
-wget http://upload.googlecode.com/files/web-v0.9.1.tar.gz
-tar -zxf web-v0.9.1.tar.gz
-rm web-v0.9.1.tar.gz
+wget http://upload.googlecode.com/files/web-v0.9.2.tar.gz
+tar -zxf web-v0.9.2.tar.gz
+rm web-v0.9.2.tar.gz
 }}}
 
 You can now edit the `settings.php` file to configure the uploader webui and add the required line(s) to `/etc/sudoers`, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration#The_WebUI configuration] page.
