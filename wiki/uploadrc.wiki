@@ -139,7 +139,7 @@ TMPPATH="/tmp/"
 This is the directory where the script will create the temporarily logfile, the torrent before it is uploaded and moved to your torrents directory and other things. Normally you could leave this to `/tmp/` however if you are with multiple users on a single server or expect to be uploading the same release to multiple sites at the same time it is recommended that you change this.
 
 {{{
-LOGFILE="/home/user/upload.log"
+LOGFILE="/home/user/upload/upload.log"
 }}}
 This is the path to the file where the upload script will log whether uploads have failed of succeeded. If you do not want to use logging set this path to `/dev/null`.
 
@@ -160,6 +160,11 @@ This is the path to `rtorrent_fast_resume.pl`, if you do not wish to use this yo
 
 
 === advanced settings ===
+
+{{{
+USERAGENT="Mozilla/4.0"
+}}}
+This is the string that will be used to specify the user-agent that the upload script "uses" to connect the site. Some sites do not allow wget/curl user-agents so with this you can specify something else.
 
 {{{
 PREPEND="au."
