@@ -77,6 +77,8 @@ www-data ALL=(user1, user2) NOPASSWD: /home/user1/upload/wrapper, /home/user2/up
 }}}
 Of course you need to replace user1 and user2 with the user(s) you want to be able to use the webui upload command. If your web user has a different name than `www-data` (i.e. `http`) you need to replace this as well.
 
+This command will allow your web user (i.e. `www-data`) to execute the file `/home/user1/upload/wrapper` as `user` without having to enter a password (normally when you `sudo` you need to enter a password).
+
 
 === settings.php ===
 
