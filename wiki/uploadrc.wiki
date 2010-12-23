@@ -30,7 +30,7 @@ LOGINURL="http://www.torrentsite.tld/login.php"
 The URL where the login form data should be posted to. For gazelle installations this is usually `login.php` and for TBDev installations this is usually `takelogin.php`. You can look at the page source what is written in the `action=""` part of the `<form>` tag.
 
 {{{
-LOGINTXT="<title>Login"
+LOGINTXT="user"
 }}}
 A _unique_ piece of text from the page you get directed to after you have logged in which will be used to check if you are logged in. A possible value for this could be your username provided this is something unique and will be shown on the page you get directed to after you are logged in.
 
