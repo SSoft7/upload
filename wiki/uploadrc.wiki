@@ -20,7 +20,7 @@ The username you use to log in to the website
 {{{
 PASSWORD="abcdefgijk"
 }}}
-The password you use to log in to the website
+The password you use to log in to the website. *Note*: there can not be a dollar sign ($) in your password as it tries to read that as a variable.
 
 {{{
 LOGINURL="http://www.torrentsite.tld/login.php"
