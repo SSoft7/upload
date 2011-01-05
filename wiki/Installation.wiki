@@ -85,9 +85,9 @@ svn checkout http://upload.googlecode.com/svn/trunk/bin uploadbin
 
 or download the tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
-wget http://upload.googlecode.com/files/bin-v0.9.2.tar.gz
-tar -zxf bin-v0.9.2.tar.gz
-rm bin-v0.9.2.tar.gz
+wget http://upload.googlecode.com/files/bin-v0.9.3.tar.gz
+tar -zxf bin-v0.9.3.tar.gz
+rm bin-v0.9.3.tar.gz
 }}}
 
 Now make the files executable:
@@ -132,9 +132,9 @@ svn checkout http://upload.googlecode.com/svn/trunk/home upload
 
 or download the tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
-wget http://upload.googlecode.com/files/home-v0.9.2.tar.gz
-tar -zxf home-v0.9.2.tar.gz
-rm home-v0.9.2.tar.gz
+wget http://upload.googlecode.com/files/home-v0.9.3.tar.gz
+tar -zxf home-v0.9.3.tar.gz
+rm home-v0.9.3.tar.gz
 }}}
 
 For security make sure you modify the upload resource files so you are the only one being able to access them:
@@ -154,6 +154,7 @@ chmod 700 upload/wrapper
 
 You can now edit the resource files, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration#The_home_directory configuration] page.
 
+*Note*: for some sites there is already a default included which makes it easier for you to set it up.
 
 == The WebUI ==
 
