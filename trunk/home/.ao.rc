@@ -41,7 +41,7 @@ SEARCHTXT="Your search did not match anything."
 
 # download dupe: 1 = yes, 0 = no
 # note: only possible if download link is on the torrents page
-DUPEDL=0
+DUPEDL=1
 
 # URL that needs to be prepended to the download URL
 DUPEURL="http://www.ao.me/"
@@ -66,18 +66,12 @@ ANNOUNCEURL="http://www.ao.me:2710/s0m3p4ssk4yf0rth3s1t3/announce"
 # upload form torrent: look for input NAME="torrent"
 UPLOADTOR="file_input"
 
-# upload form nfo: look for input NAME="nfo"
-UPLOADNFO="nfo_file_input"
-
 # upload form category: look for select NAME="category"
 UPLOADCAT="type"
 
-# upload form description: look for input NAME="description"
-UPLOADDESC="desc"
-
 # upload form extras: look for other inputs with NAME and VALUE
 # and add to the list with: -F 'name=value'
-UPLOADXTRA="-F 'submit=true' -F 'auth=s0m34uthk3yf0rth3s1t3t00'"
+UPLOADXTRA="-F 'submit=true' -F 'auth=s0m34uthk3yf0rth3s1t3t00' -F 'title=\$NAME' -F 'desc=<\$NFO'"
 
 
 ####################################
@@ -89,10 +83,6 @@ DOWNLOADS="/home/user/downloads/"
 
 # path to your torrent client watch directory
 TORRENTS="/home/user/torrents/"
-
-# path to temp dir to create torrent: use with UPCHECK
-# you only need to change this if you expect to upload the same torrent multiple times at the same time
-TMPPATH="/tmp/"
 
 # path to your log file: set to /dev/null to disable logging
 LOGFILE="/home/user/upload/upload.log"
@@ -124,11 +114,11 @@ UPCHECK=1
 # list of categories able to be uploaded into: look for options after select NAME=category
 # if the option value is a number add it _after_ the category name
 ALLCATS=(
-	"Movies\|HD" 1 "Movies\|XviD" 2 "Movies\|DVDR" 3 "Movies\|Pack" 4 "Movies\|Pack-HD" 5 "Movies\|XXX" 6
-	"TV\|XviD" 7 "TV\|HD" 8 "TV\|DVDR" 9 "TV\|Pack" 10 "TV\|Pack-HD" 11
-	"Apps\|PC" 12 "Apps\|MAC" 13 "Apps\|Nix" 14 "Apps\|Mobile" 15
-	"Games\|PC" 16 "Games\|Xbox" 17 "Games\|PS3" 18 "Games\|Wii" 19
-	"E-Books" 20 "Misc." 21
+	"Movies\|HD" 0 "Movies\|XviD" 1 "Movies\|DVDR" 2 "Movies\|Pack" 3 "Movies\|Pack-HD" 4 "Movies\|XXX" 5
+	"TV\|XviD" 6 "TV\|HD" 7 "TV\|DVDR" 8 "TV\|Pack" 9 "TV\|Pack-HD" 10
+	"Apps\|PC" 11 "Apps\|MAC" 12 "Apps\|Nix" 13 "Apps\|Mobile" 14
+	"Games\|PC" 15 "Games\|Xbox" 16 "Games\|PS3" 17 "Games\|Wii" 18
+	"E-Books" 19 "Misc." 20
 )
 
 # is the option value different than the category name? 1 = yes, 0 = no
@@ -163,7 +153,7 @@ FILTERS[n]="^(house|simpsons|south.park).*S[0-9]{2}E[0-9]{2}.*XviD"
 EXCEPTS[n]="DSR|REPACK"
 MINS[n]=70
 MAXS[n]=400
-CATS[n]="TV/XviD"
+CATS[n]=6
 let n+=1
 
 # match starts with House or CSI or NCIS S00E00 in format 720p which are between 800 and 1500 MB (1.5 GB)
@@ -171,25 +161,16 @@ FILTERS[n]="^(house|CSI|NCIS).*S[0-9]{2}E[0-9]{2}.*720p"
 EXCEPTS[n]=
 MINS[n]=800
 MAXS[n]=1500
-CATS[n]="TV/HD"
+CATS[n]=7
 let n+=1
 
-# match XXX.DVDRip.XviD which are not REPACK or PROPER and are between 650 and 750 MB
-FILTERS[n]="XXX.DVDRip.XviD"
-EXCEPTS[n]="REPACK|PROPER"
-MINS[n]=650
-MAXS[n]=750
-CATS[n]="XXX/XviD"
-let n+=1
-
-# match DVDRip.XviD which are between 650 and 1500 MB (1.5 GB)
-# NOTE: this is placed after series and XXX filters so it doesn't match most DVDRip series or XXX
+# match DVDRip.XviD which are between 650 and 1500 MB (1.5 GB) and do not match XXX (porn)
 # NOTE: if a DVDRip series or documentary which is not S00E00 format it will be matched as well so this filter might not be trusted
 FILTERS[n]="DVDRip.XviD"
-EXCEPTS[n]=
+EXCEPTS[n]="XXX"
 MINS[n]=650
 MAXS[n]=1500
-CATS[n]="Movies/XviD"
+CATS[n]=1
 let n+=1
 
 ##################################

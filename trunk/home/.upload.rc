@@ -66,18 +66,12 @@ ANNOUNCEURL="http://tracker.torrent-site.tld/s0m3p4ssk4yf0rth3s1t3/announce"
 # upload form torrent: look for input NAME="torrent"
 UPLOADTOR="torrent"
 
-# upload form nfo: look for input NAME="nfo"
-UPLOADNFO="nfo"
-
 # upload form category: look for select NAME="category"
 UPLOADCAT="cat"
 
-# upload form description: look for input NAME="description"
-UPLOADDESC="descr"
-
 # upload form extras: look for other inputs with NAME and VALUE
 # and add to the list with: -F 'name=value'
-UPLOADXTRA="-F 'submit=true' -F 'anonymous=on' -F 'auth=s0m34uthk3yf0rth3s1t3t00'"
+UPLOADXTRA="-F 'submit=true' -F 'anonymous=on' -F 'auth=s0m34uthk3yf0rth3s1t3t00' -F 'nfo=@\$NFO'"
 
 
 ####################################
@@ -89,10 +83,6 @@ DOWNLOADS="/home/user/downloads/"
 
 # path to your torrent client watch directory
 TORRENTS="/home/user/torrents/"
-
-# path to temp dir to create torrent: use with UPCHECK
-# you only need to change this if you expect to upload the same torrent multiple times at the same time
-TMPPATH="/tmp/"
 
 # path to your log file: set to /dev/null to disable logging
 LOGFILE="/home/user/upload/upload.log"
