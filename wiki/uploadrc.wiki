@@ -113,8 +113,11 @@ The form input name which is used to submit the category. You can look at the pa
 UPLOADXTRA="-F 'submit=true' -F 'nfo_file=@\$NFO' -F 'descr=<\$NFO' -F 'anonymous=on' -F 'auth=s0m34uthk3yf0rth3s1t3t00'"
 }}}
 here you can enter any other required (or optional) values that need to be posted such as title, nfo and description. You can use the variables `$NAME` (directory/file name that is being uploaded), `$NFO` (path to the .nfo file) and `$CAT` (category used for uploading), however these should be escaped with a backslash (`\`). The `@` character can be used to specify that *the file* should be uploaded and the `<` character can be used to specify that the *contents* of the file should be uploaded, this applies to the `$NFO` variable.
+
 In Gazelle installations it is usually need to add `submit=true` and possible `auth=authkey`. Some sites also have a checkbox for anonoymous so something like `anonymous=on` could be used.
+
 These values should be added in the form of `-F 'name=value'`.
+
 More information about the possible options can be found on the [http://curl.haxx.se/docs/manpage.html curl man page].
 
 
