@@ -39,10 +39,14 @@ LOGINUSR="username"
 }}}
 The form input name which is used to submit the username. You can look at the page source and look at the `<input>` tag which is used for the username. This is usually something like `username` or `user`.
 
+*Note*: This should *NOT* be your username.
+
 {{{
 LOGINPWD="password"
 }}}
 The form input name which is used to submit the password. You can look at the page source and look at the `<input>` tag which is used for the password. This is usually something like `password` or `pass`.
+
+*Note*: This should *NOT* be your password.
 
 
 === search settings ===
