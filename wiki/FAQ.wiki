@@ -79,9 +79,13 @@ Make sure that if the path to the file or directory you want to upload contains 
 
 Double check the [http://code.google.com/p/upload/wiki/uploadrc#login_settings login settings] and make sure all variables are entered correctly.
 
-`LOGINUSR` and `LOGINPWD` should *NOT* contain your site username password but should only indicate the form input names.
+Your password should *NOT* contain an ampersand (`&`) or equal sign (`=`) and if you have a dollar sign (`$`) in your password you should add a backslash (`\`) before it.
 
 `LOGINTXT` should be a text that can *NOT* be found on the login page. I.e. if your nick is _login_ you should *NOT* use this as `LOGINTXT`, use something else unique that can *NOT* be found on the login page.
+
+`LOGINUSR` and `LOGINPWD` should *NOT* contain your site username password but should only indicate the form input names.
+
+Also make sure the URL to the login page is right. In the example .rc files the site abbreviation is used and *NOT* the full URL so make sure you change this. The URL is used in several variables in the .rc file so make sure you change all of them.
 
 
 === All torrents I upload say they are dupes, but they are not on the site yet ===
@@ -92,8 +96,6 @@ Make sure your `SEARCHURL` is correct, try this out yourself on the site. If thi
 === When I upload through the WebUI it doesn't give an error but it doesn't change the pag either ===
 
 Make sure the `HOME` value in the `wrapper` file in your home `upload` dir is correct.
-
-
 
 
 
