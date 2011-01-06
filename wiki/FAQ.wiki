@@ -32,3 +32,70 @@ No, `rtorrent` is not required, you could also use some other `*`nix torrent cli
 === Could you add a default resource file for my site? ===
 
 Sure, just post a new [http://code.google.com/p/upload/issues/entry issue] and leave the proposed `.upload.rc` (where `upload` is replaced with your site abbreviation) and array for `settings.php` for the WebUI and I'll add it.
+
+
+=== What happens when there is no .nfo file? ===
+
+A temporarily `.nfo` file will be created so the nfo and description can be filled. This temporarily nfo file will not be included in the torrent though (this is not needed either). The temporarily nfo that will be created will look like this:
+
+{{{
+name: Release.Name.S00E00.DVDRip.XviD-GRP
+category: TV/XviD
+size: 174 MB
+No NFO was supplied for this release
+}}}
+
+
+== Troubleshooting ==
+
+=== I get the error that something isn't a command, but they seem right ===
+
+Make sure that the command file has been modified to be executable (`chmod 755` usually). You can check this with `ls -l` (lowercase L) and see if the x option is available. Also check the next question about the path being wrong.
+
+
+=== I get the error that one of my paths is wrong, but they seem right ===
+
+Make sure the right settings file is loaded. It should output which settings file it loads and if you use a `.site.rc` and you forgot to use the `-s site` or `-r .site.rc` option it will load the default `.upload.rc` which possibly has the wrong settings.
+
+
+=== I get the error that the category was no found in the list of categories ===
+
+Make sure you are trying to upload into a valid category. You can use the `-l` (lowercase L) flag to find out the available categories.
+
+
+=== I get the error that I used an invalid piece size option ===
+
+If you are using the `-y` trigger make sure the value is between 15 and 28, the script will then use `your value^2` bytes as piece size.
+
+If you are using the `-z` trigger make sure the value is between 32768 and 268435456 which is the byte size the torrent will *NOT* be created with.
+
+
+=== I get the error that I entered too many variables ===
+
+Make sure that if the path to the file or directory you want to upload contains a space you either escape the space (by adding a backslash in front of it) or quoting the whole path string.
+
+
+=== I get the error that I could not be logged in, however I think I have all the settings right ===
+
+Double check the [http://code.google.com/p/upload/wiki/uploadrc#login_settings login settings] and make sure all variables are entered correctly.
+
+`LOGINUSR` and `LOGINPWD` should *NOT* contain your site username password but should only indicate the form input names.
+
+`LOGINTXT` should be a text that can *NOT* be found on the login page. I.e. if your nick is _login_ you should *NOT* use this as `LOGINTXT`, use something else unique that can *NOT* be found on the login page.
+
+
+=== All torrents I upload say they are dupes, but they are not on the site yet ===
+
+Make sure your `SEARCHURL` is correct, try this out yourself on the site. If this value is wrong it may load the normal browse/torrents page which will (almost) always have results.
+
+
+=== When I upload through the WebUI it doesn't give an error but it doesn't change the pag either ===
+
+Make sure the `HOME` value in the `wrapper` file in your home `upload` dir is correct.
+
+
+
+
+
+
+
