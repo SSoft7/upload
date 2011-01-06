@@ -60,7 +60,7 @@ The `make install` command should be executed as *root* or *sudo*, if you do not
 === rtorrent_fast_resume.pl ===
 
 It is recommended that you use `rtorrent_fast_resume.pl` with this script, however this is *not required*, and if you do not have *root* or *sudo* you might not be able to use it. The reason it is recommended is because it will allow you to skip the initial hash check when the torrent gets added to `rtorrent`. As you are the person who created the torrent you can be certain that you have the files from the torrent 100% complete.
-`rtorrent_fast_resume.pl` can be downloaded from the [http://libtorrent.rakshasa.no/ libtorrent] page. To download the script to your home directory you can execute the following command:
+`rtorrent_fast_resume.pl` can be downloaded from the [http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks#Addingfastresumedatatotorrentfiles libtorrent common tasks] page. To download the script to your home directory you can execute the following command:
 {{{
 cd ~/
 wget http://libtorrent.rakshasa.no/downloads/rtorrent_fast_resume.pl
