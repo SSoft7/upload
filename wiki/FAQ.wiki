@@ -72,7 +72,7 @@ If you are using the `-z` trigger make sure the value is between 32768 and 26843
 
 === I get the error that I entered too many variables ===
 
-Make sure that if the path to the file or directory you want to upload contains a space you either escape the space (by adding a backslash in front of it) or quoting the whole path string.
+Make sure that if the path to the file or directory you want to upload contains a space you either escape the space (by adding a backslash in front of it) or adding quotes (either double `"` or single `'`) around the whole path string.
 
 
 === I get the error that I could not be logged in, however I think I have all the settings right ===
@@ -93,11 +93,11 @@ Also make sure the URL to the login page is right. In the example .rc files the 
 Make sure your `SEARCHURL` is correct, try this out yourself on the site. If this value is wrong it may load the normal browse/torrents page which will (almost) always have results.
 
 
-=== When I upload through the WebUI it doesn't give an error but it doesn't change the pag either ===
+=== When I upload through the WebUI it doesn't give an error but it doesn't change the page either ===
 
 Make sure the `HOME` value in the `wrapper` file in your home `upload` dir is correct.
 
 
+=== I uploaded a release to multiple sites but it only shows up once in my client ===
 
-
-
+Several clients will not load a torrent with the same info-hash in the client twice. The best way to avoid getting the same info-hash is by using a different piece size to create the torrent. You can use the `-y` option to create a torrent with a specified piece size.
