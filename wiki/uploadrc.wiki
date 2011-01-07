@@ -232,3 +232,8 @@ Here you can specify sizes which will be matched against the release directory. 
 CATS[n]="TV/XviD"
 }}}
 Here you specify the category where the release should be uploaded into if it passes the filter. If the category option value is different then the category name you should *not* use the category name here but the category option (which is usually a number). If you do enter a category name it should be *case sensitive*
+
+{{{
+let n+=1
+}}}
+This line is needed after every filter to increase the filter counter. If you forget this line the filter that comes after this will overwrite the previous filter.
