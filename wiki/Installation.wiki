@@ -94,7 +94,7 @@ and then you can remove the .gz file:
 rm -f upload-v0.9.4.gz
 }}}
 
-Now make the file executable:
+Now make the script executable (you need to run this command as *root* or *sudo*):
 {{{
 chmod 755 /usr/local/bin/upload
 }}}
