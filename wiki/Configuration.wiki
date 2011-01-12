@@ -62,7 +62,7 @@ elif [ $1 = "rtorrent" ]; then
     upload -s abbr -z "$2" "$3" >/dev/null 2>&1 &
 fi
 }}}
-where abbr is the case-sensitive abbreviation which is used for the resource file for the specific site (i.e. `.abbr.rc`).If you want you could add several of these lines (under eachother) to automate the uploading to several sites.
+where `abbr` is the case-sensitive abbreviation which is used for the resource file for the specific site (i.e. `.abbr.rc`). If you want you could add several of these lines (under eachother) to automate the uploading to several sites.
 
 The call to the `upload` script is without specifying a category to upload in, so you need to set up filters in your `.upload.rc`.
 
