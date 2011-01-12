@@ -64,6 +64,9 @@ where abbr is the case-sensitive abbreviation which is used for the resource fil
 
 The call to the `upload` script is without specifying a category to upload in, so you need to set up filters in your `.upload.rc`.
 
+To automate the script from another program (i.e. FTP program that has an oncomplete even) you could add a piece of code similar to the one for rtorrent under it with the parameters you want to use.
+
+
 == The WebUI ==
 
 In order to be able to use the webui the web user needs to be able to execute the wrapper file in the users their home upload directory as that user. In order to do so you need to add an extra line in the `/etc/sudoers` file.
