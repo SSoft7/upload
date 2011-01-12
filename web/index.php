@@ -211,7 +211,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errors[] = "<strong>" . htmlspecialchars($_POST["release"]) . "</strong> does not exist in <strong>" . htmlspecialchars($user["data"]) . "</strong>";
 
         // start building the uploadwrap command
-        $cmd = "sudo -u " . $_SESSION["user"] . " '" . $user["uploader"] . "wrapper webui'";
+        $cmd = "sudo -u " . $_SESSION["user"] . " '" . $user["uploader"] . "wrapper' webui";
 
         // check if a release needs to be reset
         if (empty($errors) && $_POST["reset"] == "Reset") {
