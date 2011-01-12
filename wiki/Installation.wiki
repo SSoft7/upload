@@ -124,9 +124,9 @@ svn checkout http://upload.googlecode.com/svn/trunk/home upload
 
 or download the tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
-wget http://upload.googlecode.com/files/home-v0.9.3.tar.gz
-tar -zxf home-v0.9.3.tar.gz
-rm home-v0.9.3.tar.gz
+wget http://upload.googlecode.com/files/home-v0.9.4.tar.gz
+tar -zxf home-v0.9.4.tar.gz
+rm home-v0.9.4.tar.gz
 }}}
 
 For security make sure you modify the upload resource files so you are the only one being able to access them:
@@ -162,9 +162,9 @@ svn checkout http://upload.googlecode.com/svn/trunk/web uploader
 
 or download the tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
-wget http://upload.googlecode.com/files/web-v0.9.2.tar.gz
-tar -zxf web-v0.9.2.tar.gz
-rm web-v0.9.2.tar.gz
+wget http://upload.googlecode.com/files/web-v0.9.4.tar.gz
+tar -zxf web-v0.9.4.tar.gz
+rm web-v0.9.4.tar.gz
 }}}
 
 You can now edit the `settings.php` file to configure the uploader webui and add the required line(s) to `/etc/sudoers`, more information about this can be found on the [http://code.google.com/p/upload/wiki/Configuration#The_WebUI configuration] page.
