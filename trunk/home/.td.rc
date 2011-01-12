@@ -58,7 +58,7 @@ DUPECMD="cut -d \" -f 2"
 ####################################
 
 # website upload URL
-UPLOADURL="https://www.t-d.net/upload.php"
+UPLOADURL="http://www.t-d.net/upload.php"
 
 # your personal announce URL
 ANNOUNCEURL="http://tracker.t-d.net/s0m3p4ssk4yf0rth3s1t3/announce"
