@@ -67,7 +67,7 @@ wget http://libtorrent.rakshasa.no/downloads/rtorrent_fast_resume.pl
 chmod 755 rtorrent_fast_resume.pl
 }}}
 
-In order to use `rtorrent_fast_resume.pl` you need `Convert::Bencode` from CPAN. If you do not have this installed you can do so by executing the following command as *sudo* or *root* (so yes, this means that if you do not have this permission and are not able to ask someone to do this for you that you cannot use `rtorrent_fast_resume.pl`):
+In order to use `rtorrent_fast_resume.pl` you need `Convert::Bencode` from CPAN. If you do not have this installed you can do so by executing the following command as *root* or *sudo* (so yes, this means that if you do not have this permission and are not able to ask someone to do this for you that you cannot use `rtorrent_fast_resume.pl`):
 {{{
 perl -MCPAN -e 'install Convert::Bencode'
 }}}
@@ -76,39 +76,31 @@ When it asks you if you want to automate the installation answer yes.
 
 == The bin directory ==
 
-If you are not going to be executing the `upload` command from the `rtorrent` oncomplete event you do not need to copy the `uploadwrap` file.
-
-Download the bin directory part of the script from SVN:
+Download the script from SVN directly into your `/usr/local/bin/` directory (you need to run this command as *root* or *sudo*):
 {{{
-svn checkout http://upload.googlecode.com/svn/trunk/bin uploadbin
+svn export http://upload.googlecode.com/svn/trunk/bin/upload /usr/local/bin/upload
 }}}
 
-or download the tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
+or download the gzipped file (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
-wget http://upload.googlecode.com/files/bin-v0.9.3.tar.gz
-tar -zxf bin-v0.9.3.tar.gz
-rm bin-v0.9.3.tar.gz
+wget http://upload.googlecode.com/files/upload-v0.9.4.gz
+}}}
+and `gunzip` it to your `/usr/local/bin/` directory (you need to run this command as *root* or *sudo*):
+{{{
+bash -c "gunzip -c upload-v0.9.4.gz > /usr/local/bin/upload"
+}}}
+and then you can remove the .gz file:
+{{{
+rm -f upload-v0.9.4.gz
 }}}
 
-Now make the files executable:
+Now make the file executable:
 {{{
-chmod 755 uploadbin/upload
-chmod 755 uploadbin/uploadwrap
+chmod 755 /usr/local/bin/upload
 }}}
 
-And finally move them to the `/usr/local/bin/` directory (note: you need either *root* or *sudo* for this):
-{{{
-mv uploadbin/upload /usr/local/bin/
-mv uploadbin/uploadwrap /usr/local/bin/
-rm -r uploadbin/
-}}}
+If you do not have *root* or *sudo* permissions you can also move these files to your local `/bin` directory by replacing the `/usr/local/bin/` with with `~/bin/` in the previous commands.
 
-If you do not have *root* or *sudo* permissions you can also move these files to your local `/bin` directory:
-{{{
-mv uploadbin/upload ~/bin/
-mv uploadbin/uploadwrap ~/bin/
-rm -r uploadbin/
-}}}
 
 If your local `/bin` directory does not exist yet you can easily create it with the `mkdir` command:
 {{{
