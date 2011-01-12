@@ -139,7 +139,7 @@ rm home-v0.9.3.tar.gz
 
 For security make sure you modify the upload resource files so you are the only one being able to access them:
 {{{
-chmod 600 upload/*.rc
+chmod 600 upload/.*.rc
 }}}
 
 However the `.webui.rc` file should be readable for the web user:
