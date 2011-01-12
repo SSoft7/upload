@@ -605,7 +605,7 @@ fi
 
 # > 473 GB -> 32 MB piece size (15.136+ pieces)
 if [ $MBs -gt 484352 ]; then
-    PIECES=24
+    PIECES=25
 # 190 - 473 GB -> 16 MB piece size (12160 - 30272 pieces)
 elif [ $MBs -gt 194560 ]; then
     PIECES=24
