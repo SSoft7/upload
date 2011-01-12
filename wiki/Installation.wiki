@@ -78,7 +78,7 @@ When it asks you if you want to automate the installation answer yes.
 
 === With root / sudo privileges ===
 
-Download the script from SVN directly into your `/usr/local/bin/` directory (you need to run these commands as *root* or *sudo*) and make it executable:
+Download the script from SVN directly into your `/usr/local/bin/` directory and make it executable (you need to run these commands as *root* or *sudo*):
 {{{
 svn export http://upload.googlecode.com/svn/trunk/bin/upload /usr/local/bin/upload
 chmod 755 /usr/local/bin/upload
@@ -89,7 +89,7 @@ Or download the gzipped file (make sure to check for the latest version on the [
 {{{
 wget http://upload.googlecode.com/files/upload-v0.9.4.gz
 }}}
-and `gunzip` it to your `/usr/local/bin/` directory (you need to run these commands as *root* or *sudo*) and make it executable:
+and `gunzip` it to your `/usr/local/bin/` directory and make it executable (you need to run these commands as *root* or *sudo*):
 {{{
 bash -c "gunzip -c upload-v0.9.4.gz > /usr/local/bin/upload"
 chmod 755 /usr/local/bin/upload
