@@ -81,12 +81,13 @@ When it asks you if you want to automate the installation answer yes.
 Download the script from SVN directly into your `/usr/local/bin/` directory (you need to run this command as *root* or *sudo*) and make it executable:
 {{{
 svn export http://upload.googlecode.com/svn/trunk/bin/upload /usr/local/bin/upload
+chmod 755 /usr/local/bin/upload
 }}}
 
-or download the gzipped file (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
+
+Or download the gzipped file (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
 wget http://upload.googlecode.com/files/upload-v0.9.4.gz
-chmod 755 /usr/local/bin/upload
 }}}
 and `gunzip` it to your `/usr/local/bin/` directory (you need to run this command as *root* or *sudo*) and make it executable:
 {{{
