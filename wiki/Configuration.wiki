@@ -50,6 +50,7 @@ Currently the `wrapper` file has only a single `upload` line in it for rtorrent:
 {{{
 # if invoked by rtorrent
 elif [ $1 = "rtorrent" ]; then
+    cd "$HOME/upload"
     upload -z $2 "$3" >/dev/null 2>&1 &
 fi
 }}}
@@ -57,6 +58,7 @@ In this case it will take the default `.upload.rc` file to use as resource. If y
 {{{
 # if invoked by rtorrent
 elif [ $1 = "rtorrent" ]; then
+    cd "$HOME/upload"
     upload -s abbr -z "$2" "$3" >/dev/null 2>&1 &
 fi
 }}}
