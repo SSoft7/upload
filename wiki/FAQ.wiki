@@ -93,6 +93,18 @@ Also make sure the URL to the login page is right. In the example .rc files the 
 Make sure your `SEARCHURL` is correct, try this out yourself on the site. If this value is wrong it may load the normal browse/torrents page which will (almost) always have results.
 
 
+=== I cannot log in to my WebUI ===
+
+Make sure your home directory is readable, the upload directory is readable, and the `.webui.rc` is readable.
+
+If you use SELinux you have to allow your web user to read the home directory and the contents. As *root* or *sudo* run the following commands:
+
+{{{
+setsebool -P httpd_enable_homedirs 1
+setsebool -P httpd_read_user_content 1
+}}}
+
+
 === When I upload through the WebUI it doesn't give an error but it doesn't change the page either ===
 
 Make sure the `HOME` value in the `wrapper` file in your home `upload` dir is correct.
