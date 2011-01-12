@@ -76,7 +76,9 @@ When it asks you if you want to automate the installation answer yes.
 
 == The bin directory ==
 
-Download the script from SVN directly into your `/usr/local/bin/` directory (you need to run this command as *root* or *sudo*):
+=== With root / sudo privileges ===
+
+Download the script from SVN directly into your `/usr/local/bin/` directory (you need to run this command as *root* or *sudo*) and make it executable:
 {{{
 svn export http://upload.googlecode.com/svn/trunk/bin/upload /usr/local/bin/upload
 }}}
@@ -84,20 +86,20 @@ svn export http://upload.googlecode.com/svn/trunk/bin/upload /usr/local/bin/uplo
 or download the gzipped file (make sure to check for the latest version on the [http://code.google.com/p/upload/downloads/list downloads] page):
 {{{
 wget http://upload.googlecode.com/files/upload-v0.9.4.gz
+chmod 755 /usr/local/bin/upload
 }}}
-and `gunzip` it to your `/usr/local/bin/` directory (you need to run this command as *root* or *sudo*):
+and `gunzip` it to your `/usr/local/bin/` directory (you need to run this command as *root* or *sudo*) and make it executable:
 {{{
 bash -c "gunzip -c upload-v0.9.4.gz > /usr/local/bin/upload"
+chmod 755 /usr/local/bin/upload
 }}}
 and then you can remove the .gz file:
 {{{
 rm -f upload-v0.9.4.gz
 }}}
 
-Now make the script executable (you need to run this command as *root* or *sudo*):
-{{{
-chmod 755 /usr/local/bin/upload
-}}}
+
+=== Without root / sudo privileges ===
 
 If you do not have *root* or *sudo* permissions you can also move these files to your local `/bin` directory by replacing the `/usr/local/bin/` with with `~/bin/` in the previous commands.
 
