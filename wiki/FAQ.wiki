@@ -79,7 +79,9 @@ Make sure that if the path to the file or directory you want to upload contains 
 
 Double check the [http://code.google.com/p/upload/wiki/uploadrc#login_settings login settings] and make sure all variables are entered correctly.
 
-Your password should *NOT* contain an ampersand (`&`) or equal sign (`=`) and if you have a dollar sign (`$`) in your password you should add a backslash (`\`) before it.
+Your password can *NOT* contain an ampersand (`&`) or equal sign (`=`).
+
+If you have a dollar sign (`$`) or a backslash (`\`) in your password you should add a backslash (`\`) in front of it because else it will not read your password correctly.
 
 `LOGINTXT` should be a text that can *NOT* be found on the login page. I.e. if your nick is _login_ you should *NOT* use this as `LOGINTXT`, use something else unique that can *NOT* be found on the login page.
 
