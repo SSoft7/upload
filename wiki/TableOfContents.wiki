@@ -43,7 +43,12 @@
 ----
 
 {{{
-If you enjoy using this script and would like to send a donation so I can buy more weed to work on this project you can do so by clicking the button below, thanks in advance:
+If you enjoy using this script
+and would like to send a donation
+so I can buy more weed to work
+on this project you can do so
+by clicking the button below,
+thanks in advance:
 }}}
 
 [https://www.paypal.com/cgi-bin/webscr?cmd=_donations&currency_code=EUR&business=98L2P7LC3PNJY&item_name=uploader https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif]
