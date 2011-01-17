@@ -99,6 +99,8 @@ Make sure your `SEARCHURL` is correct, try this out yourself on the site. If thi
 
 Make sure your home directory is readable, the upload directory is readable, and the `.webui.rc` is readable.
 
+The WebUI looks in `/home/USER/upload/.webui.rc` for the login password. `/home/` is defined in `settings.php`. Your log in will also fail if your `data` variable (path to your downloads) does not contain your username, this is to prevent anyone from listing contents that are not theirs. If your data directory is in a different place I suggest you create a symbolic link to the data (i.e.: `ln -s /path/to/data/ /home/USER/data/`).
+
 If you use SELinux you have to allow your web user to read the home directory and the contents. As *root* or *sudo* run the following commands:
 
 {{{
