@@ -83,9 +83,9 @@ Your password can *NOT* contain an ampersand (`&`) or equal sign (`=`).
 
 If you have a dollar sign (`$`) or a backslash (`\`) in your password you should add a backslash (`\`) in front of it because else it will not read your password correctly.
 
-`LOGINTXT` should be a text that can *NOT* be found on the login page. I.e. if your nick is _login_ you should *NOT* use this as `LOGINTXT`, use something else unique that can *NOT* be found on the login page.
+`LOGINTXT` should be a text that can *NOT* be found on the login page. I.e. if your nick is _login_ you should *NOT* use this as `LOGINTXT`, use something else unique that can *NOT* be found on the login page. This text is *case-sensitive*.
 
-`LOGINUSR` and `LOGINPWD` should *NOT* contain your site username password but should only indicate the form input names.
+`LOGINUSR` and `LOGINPWD` should *NOT* contain your site username password but should only indicate the form input names. (so i.e. the input is `<input type="text" name="username" />` as field where you have to enter your username then the `LOGINUSR` should be `username`.
 
 Also make sure the URL to the login page is right. In the example .rc files the site abbreviation is used and *NOT* the full URL so make sure you change this. The URL is used in several variables in the .rc file so make sure you change all of them.
 
