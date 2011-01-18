@@ -34,12 +34,14 @@ LOGINTXT="user"
 }}}
 A _unique_ piece of text from the page you get directed to after you have logged in which will be used to check if you are logged in. A possible value for this could be your username provided this is something unique and will be shown on the page you get directed to after you are logged in.
 
+*Note*: This text is *case-sensitive*.
+
 {{{
 LOGINUSR="username"
 }}}
 The form input name which is used to submit the username. You can look at the page source and look at the `<input>` tag which is used for the username. This is usually something like `username` or `user`.
 
-*Note*: This should *NOT* be your username.
+*Note*: This should *NOT* be your username. I.e. the input is `<input type="text" name="username" />` as field where you have to enter your username then the `LOGINUSR` should be `username`.
 
 {{{
 LOGINPWD="password"
