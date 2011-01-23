@@ -20,7 +20,7 @@ More information about how to use the script can be found on the [Overview#Usage
 
 === Do I need root or sudo privileges to install the uploader? ===
 
-No, you do not need root or sudo privileges. If you don't have these you should install the script and other needed binaries into your local `/bin` directory.
+No, you do not need root or sudo privileges. If you don't have these you should [http://code.google.com/p/upload/wiki/Installation#Without_root_/_sudo_privileges install the script and other needed binaries into your local bin directory].
 If you do not have sudo or root privileges you cannot use `rtorrent_fast_resume.pl` (unless `Convert::Bencode` is installed) or use the WebUI though.
 
 
