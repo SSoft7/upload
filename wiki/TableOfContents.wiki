@@ -18,6 +18,8 @@
       * [Installation#mktorrent mktorrent]
       * [Installation#rtorrent_fast_resume.pl rtorrent_fast_resume.pl]
     * [Installation#The_bin_directory The bin directory]
+      * [http://code.google.com/p/upload/wiki/Installation#With_root_/_sudo_privileges With root/sudo privileges]
+      * [http://code.google.com/p/upload/wiki/Installation#Without_root_/_sudo_privileges Without root/sudo privileges]
     * [Installation#The_home_directory The home directory]
     * [Installation#The_WebUI The WebUI]
   * [Configuration Configuration]
