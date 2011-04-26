@@ -16,7 +16,7 @@ USERNAME="user"
 PASSWORD="abcdefgijk"
 
 # website login URL
-LOGINURL="http://www.ao.me/login.php"
+LOGINURL="https://www.ao.me/login.php"
 
 # logged in text: something _unique_ to check if you are logged in
 # possibly your username if it's unique and on the page you get directed to after logging in
@@ -34,7 +34,7 @@ LOGINPWD="password"
 ####################################
 
 # website search URL
-SEARCHURL="http://www.ao.me/torrents.php?groupname="
+SEARCHURL="https://www.ao.me/torrents.php?groupname="
 
 # search no result text: something _unique_ to check if no results are found
 SEARCHTXT="Your search did not match anything."
@@ -58,7 +58,7 @@ DUPECMD="cut -d \" -f 2"
 ####################################
 
 # website upload URL
-UPLOADURL="http://www.ao.me/upload.php"
+UPLOADURL="https://www.ao.me/upload.php"
 
 # your personal announce URL
 ANNOUNCEURL="http://www.ao.me:2710/s0m3p4ssk4yf0rth3s1t3/announce"
